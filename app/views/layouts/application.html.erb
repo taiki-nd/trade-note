@@ -33,7 +33,7 @@
     <nav id="nav_bar">
       <div class="space"></div>
       <ul class="navi_list">  
-        <li class="navi"><%= link_to 'top', root_path  %></li>
+        <li class="navi"><%= link_to 'Top', root_path  %></li>
         <li class="navi"><%= link_to '全てのトレードノート', "/" %></li>
         <li class="navi"><%= link_to '全ての記事', "/" %></li>
       </ul>
@@ -41,7 +41,7 @@
         <%# if user_signed_in? %>
           <li class="navi"><%= link_to 'ログアウト', "/", method: :delete %></li>
           <li class="navi"><%= link_to 'マイページ', "/" %></li>
-          <li class="navi"><%= link_to 'create record', "/" %></a></li>
+          <li class="navi"><%= link_to '新規TradeNoteの作成', "/" %></a></li>
         <%# else %>
           <li class="navi"><%= link_to 'ログイン', "/" %></li>
           <li class="navi"><%= link_to '新規登録', "/" %></li>

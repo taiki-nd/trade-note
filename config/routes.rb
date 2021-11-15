@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'static_page#top'
   get 'privacy_policy', to: 'static_page#privacy'
   get 'disclaimer', to: 'static_page#disclaimer'

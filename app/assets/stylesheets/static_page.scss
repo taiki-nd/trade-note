@@ -1,0 +1,24 @@
+// Place all the styles related to the static_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.catch{
+  width: fit-content;
+  width: -moz-fit-content;
+  margin: 0 auto;
+  font-size: 25px;
+  padding: 1rem 3rem;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(20deg, #f86262, #dbdbdb, #b9ff90);
+  background-image: linear-gradient(70deg, #f86262, #dbdbdb, #b9ff90);
+}
+
+.benefit{
+  margin: 6px;
+  font-weight: bold;
+}
+
+.btns{
+  display: flex;
+  justify-content: space-around;
+}

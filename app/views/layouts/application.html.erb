@@ -41,7 +41,7 @@
       </ul>
       <ul class="navi_log">
         <%# if user_signed_in? %>
-          <li class="navi"><%= link_to 'ログアウト', "/", method: :delete %></li>
+          <li class="navi"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <li class="navi"><%= link_to 'マイページ', "/" %></li>
           <li class="navi"><%= link_to '新規TradeNoteの作成', "/" %></a></li>
         <%# else %>

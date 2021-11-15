@@ -56,7 +56,7 @@
 
 #nav_bar a{
   text-decoration: none;
-  color: #fff;
+  color: #000000;
 }
 
 #nav_bar{
@@ -65,7 +65,7 @@
   bottom: 0;
   right: -300px;
   width: 300px;
-  background-color: #333;
+  background-color: #ffffff;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -86,9 +86,10 @@
 .navi{
   display: block;
   width: 250px;
-  border-bottom: 1px solid #fff;
   margin: 10px;
-  color: #fff;
+  border-bottom: 6px solid;
+  border-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  border-image-slice: 1;
 }
 
 .navi_log{
@@ -133,7 +134,7 @@
   left: 0;
   width: 30px;
   height: 2px;
-  background-color: #212121;
+  background-color: #000000;
   border-radius: 4px;
   transition: all 1s;
 }
@@ -151,7 +152,7 @@
 }
 
 .open .toggle_btn span{
-  background-color: #fff;
+  background-color: #000000;
 }
 
 .open .toggle_btn span:nth-child(1){

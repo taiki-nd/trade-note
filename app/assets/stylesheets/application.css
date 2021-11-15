@@ -87,7 +87,7 @@
   display: block;
   width: 250px;
   margin: 10px;
-  border-bottom: 6px solid;
+  border-bottom: 3px solid;
   border-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
   border-image-slice: 1;
 }
@@ -186,3 +186,35 @@
   cursor: pointer;
 }
 
+#footer{
+  width: 100%;
+  color: #656869;
+  display: block;
+  border-top: 3px solid;
+  border-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  border-image-slice: 1;
+}
+
+
+
+.footer_word{
+  font-size: 0.7rem;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer_links{
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.7rem;
+}
+
+.risk_warning{
+  width: 90%;
+  margin: 25px auto 25px;
+  padding: 0 10px;
+  border: 1px solid #000000;
+}

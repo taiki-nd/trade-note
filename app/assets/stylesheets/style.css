@@ -38,8 +38,8 @@ h2:after{
   height: 100%;
   content: '';
   border-radius: 3px;
-  background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
-  background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #5eff00);
+  background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #5eff00);
 }
 
 h3{
@@ -52,7 +52,7 @@ h3{
 }
 
 .link_word:hover{
-  background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #87ff41);
+  background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #55e900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

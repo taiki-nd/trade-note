@@ -1,16 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TradeNote</title>
+    <title>トレードノート</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
   </head>
 
   <body>
+  <header id="header">
+      
+    <div class="heading" id="heading_id">
+      <%= link_to "Trade-Note", "/" %>
+    </div>
+    
+    <div class="none">
+      <%# if user_signed_in? %>
+        <div class="current_user">
+          <%#user :   <%= link_to current_user.name, "/users/#{current_user.id}", class: 'user_name' %>
+        </div>
+      <%# else %>
+        <div class="current_user">
+          
+        </div>
+      <%# end %>
+    </div>
+
+    <nav id="nav_bar">
+      <ul class="navi_list">  
+        <li class="navi"><%= link_to 'top', root_path  %></li>
+        <li class="navi"><%= link_to '全てのトレードノート', "/" %></li>
+        <li class="navi"><%= link_to '全ての記事', "/" %></li>
+      </ul>
+      <ul class="navi_log">
+        <%# if user_signed_in? %>
+          <li class="navi"><%= link_to 'ログアウト', "/", method: :delete %></li>
+          <li class="navi"><%= link_to 'マイページ', "/" %></li>
+          <li class="navi"><%= link_to 'create record', "/" %></a></li>
+        <%# else %>
+          <li class="navi"><%= link_to 'ログイン', "/" %></li>
+          <li class="navi"><%= link_to '新規登録', "/" %></li>
+        <%# end %>
+      </ul>
+      
+      <ul class="navi_pages">
+        <%# if user_signed_in? %>
+          <li class="navi">
+          <%= link_to "https://liff.line.me/1645278921-kWRPP32q?accountId=662tugjz#mst_challenge=xQINvbfNZG-ib2wvs4A5jFQfrDVKLss9ZWCHLhHlyvk" do %>
+            お問い合わせ<i class="fab fa-line line-btn"></i>
+          <% end %>
+        </li>
+        <%# end %>
+        <li class="navi">
+        <%= link_to "https://liff.line.me/1645278921-kWRPP32q?accountId=662tugjz#mst_challenge=xQINvbfNZG-ib2wvs4A5jFQfrDVKLss9ZWCHLhHlyvk" do %>
+          お知らせ<i class="fab fa-twitter-square twitter-btn"></i>
+        <% end %>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="toggle_btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div id="mask"></div>
+  </header>
+
     <%= yield %>
   </body>
 </html>

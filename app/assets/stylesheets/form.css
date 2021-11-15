@@ -1,0 +1,51 @@
+form input,
+form textarea,
+form select{
+  width: 80%;
+  margin: 5px auto 15px;
+  padding: 15px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  display: block;
+}
+
+form input[type="submit"] {
+  background-color: #212121;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+  width: 300px
+}
+
+form input[type="submit"]:hover {
+  background-color: #bbbbbb;
+  width: 300px
+}
+
+.explain{
+  width: 80%;
+  margin: 50px auto 15px;
+  display: block;
+}
+
+.indispensable {
+  background: #ea352d;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.error_alert{
+  margin: 0 auto;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+.error_message{
+  color: #ea352d;
+  list-style: none;
+}

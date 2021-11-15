@@ -1,16 +1,74 @@
 h1{
   font-size: 1.7rem;
-  margin: 25px;
+  margin: 25px 0;
+}
+
+h1 {
+  position: relative;
+  padding: 1rem 1.7rem;
+}
+
+h1:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  content: '';
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
+  background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
 }
 
 h2{
   font-size: 1.5rem;
-  margin: 20px;
+  margin: 20px 0;
+}
+
+h2{
+  position: relative;
+  padding: 1rem 1.5rem;
+}
+
+h2:after{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  content: '';
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
+  background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
 }
 
 h3{
   font-size: 1.3rem;
   margin: 15px;
+}
+
+.link_word{
+  color: #777777;
+}
+
+.link_word:hover{
+  background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #87ff41);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn{
+  text-decoration: none;
+  color: #000000;
+  padding: 0.5rem 1rem;
+  border: 1px solid #000000;
+  border-radius: 100vh;
+}
+
+.btn:hover{
+  border: 1px solid #ffffff;;
+  background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
+  background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
 }
 
 .content{

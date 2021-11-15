@@ -1,2 +1,38 @@
-<h1>StaticPage#top</h1>
-<p>Find me in app/views/static_page/top.html.erb</p>
+<div class="content">
+  <h1>トレードノートを作ろう！</h1>
+
+  <p class="catch">自分のトレードノートが世界最高の取引教材となるその時まで</p>
+
+  <h2>トレードノートから取引を分析</h2>
+  <p>
+  自身の取引を記録することでデータを作りグラフ化していきます。<br>
+  自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！
+  </p>
+
+  <h2>トレードノートを公開するメリット</h2>
+  <ul>
+    <li class="benefit">取引ルールが明確になる</li>
+    <li class="benefit">取引ルールを守れるようになる</li>
+    <li class="benefit">自身の取引に対する理解が深まる</li>
+    <li class="benefit">取引ルールのブラッシュアップ</li>
+    <li class="benefit">取引記録に対するフィードバック</li>
+    <li class="benefit">他トレーダーの記録で勉強できる</li>
+  </ul>
+
+  <h2>みんなのトレードノートを見る</h2>
+  <%= link_to "もっと見る", "/", class: "link_word" %>
+  <div class="space"></div>
+  <div class="btns">
+    <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
+    <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
+  </div>
+
+  <div class="space"></div>
+
+  <h2>最新記事</h2>
+  <%= link_to "もっと見る", "/", class: "link_word" %>
+  <div class="space"></div>
+
+</div>
+
+

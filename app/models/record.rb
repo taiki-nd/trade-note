@@ -20,4 +20,6 @@ class Record < ApplicationRecord
     validates :result_section_id
   end
 
+  belongs_to :user
+
 end

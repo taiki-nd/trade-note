@@ -1,2 +1,5 @@
 class Record < ApplicationRecord
+
+  
+
 end

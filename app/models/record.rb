@@ -22,4 +22,16 @@ class Record < ApplicationRecord
 
   belongs_to :user
 
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :hour
+  belongs_to :ashi
+  belongs_to :pair
+  belongs_to :kind
+  belongs_to :line_main
+  belongs_to :line_sub
+  belongs_to :indi_main
+  belongs_to :indi_sub
+  belongs_to :method
+  belongs_to :result_section
+
 end

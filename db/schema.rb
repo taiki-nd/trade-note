@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_123823) do
+ActiveRecord::Schema.define(version: 2021_11_17_152511) do
+
+  create_table "records", charset: "utf8", force: :cascade do |t|
+    t.date "date"
+    t.integer "hour_id"
+    t.integer "pair_id"
+    t.integer "ashi_id"
+    t.integer "line_main_id"
+    t.integer "line_sub_id"
+    t.integer "indi_main_id"
+    t.integer "indi_sub_id"
+    t.text "entry_basis"
+    t.integer "method_id"
+    t.float "price_renge"
+    t.integer "result_section_id"
+    t.integer "result_content"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_records_on_user_id"
+  end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false

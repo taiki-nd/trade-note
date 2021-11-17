@@ -7,7 +7,7 @@ class Record < ApplicationRecord
     validates :ashi_id
     validates :price_renge, numericality: true
     validates :entry_basis
-    validates :method_id
+    validates :order_id
     validates :result_section_id
     validates :result_content
   end
@@ -16,11 +16,12 @@ class Record < ApplicationRecord
     validates :hour_id
     validates :pair_id
     validates :ashi_id
-    validates :method_id
+    validates :order_id
     validates :result_section_id
   end
 
   belongs_to :user
+  has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :hour
@@ -31,7 +32,7 @@ class Record < ApplicationRecord
   belongs_to :line_sub
   belongs_to :indi_main
   belongs_to :indi_sub
-  belongs_to :method
+  belongs_to :order
   belongs_to :result_section
 
 end

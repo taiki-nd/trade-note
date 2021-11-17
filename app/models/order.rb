@@ -1,4 +1,4 @@
-class Method < ActiveHash::Base
+class Order < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '成行買い' },

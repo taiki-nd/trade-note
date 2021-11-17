@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
+
+  def to_param
+    return self.nickname
+  end
+
 end

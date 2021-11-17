@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  
-  before_action :set_user, only: [:edit, :show]
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
@@ -14,16 +13,13 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(nickname: params[:nickname])
   end
 
   private
 
   def user_params
     params.require(:user).permit(:nickname, :email)
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 
 end

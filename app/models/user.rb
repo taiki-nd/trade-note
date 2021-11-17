@@ -4,5 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, uniqueness: true, format: { with: /\A[a-zA-Z\d]+\z/ }, length: { minimum: 3, maximum: 25 }
+  validates :nickname, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
+
+  def to_param
+    return self.nickname
+  end
+
 end

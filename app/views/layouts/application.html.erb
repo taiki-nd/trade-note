@@ -40,26 +40,26 @@
         <li class="navi"><%= link_to '全ての記事', "/" %></li>
       </ul>
       <ul class="navi_log">
-        <%# if user_signed_in? %>
-          <li class="navi"><%= link_to 'ログアウト', "/", method: :delete %></li>
-          <li class="navi"><%= link_to 'マイページ', "/" %></li>
+        <% if user_signed_in? %>
+          <li class="navi"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <li class="navi"><%= link_to 'マイページ', "/users/#{current_user.nickname}" %></li>
           <li class="navi"><%= link_to '新規TradeNoteの作成', "/" %></a></li>
-        <%# else %>
-          <li class="navi"><%= link_to 'ログイン', "/" %></li>
-          <li class="navi"><%= link_to '新規登録', "/" %></li>
-        <%# end %>
+        <% else %>
+          <li class="navi"><%= link_to 'ログイン', new_user_session_path %></li>
+          <li class="navi"><%= link_to '新規登録', new_user_registration_path %></li>
+        <% end %>
       </ul>
       
       <ul class="navi_pages">
-        <%# if user_signed_in? %>
+        <% if user_signed_in? %>
           <li class="navi">
           <%= link_to "https://liff.line.me/1645278921-kWRPP32q?accountId=662tugjz#mst_challenge=xQINvbfNZG-ib2wvs4A5jFQfrDVKLss9ZWCHLhHlyvk" do %>
             お問い合わせ<i class="fab fa-line line-btn"></i>
           <% end %>
         </li>
-        <%# end %>
+        <% end %>
         <li class="navi">
-        <%= link_to "https://liff.line.me/1645278921-kWRPP32q?accountId=662tugjz#mst_challenge=xQINvbfNZG-ib2wvs4A5jFQfrDVKLss9ZWCHLhHlyvk" do %>
+        <%= link_to "https://twitter.com/FX_Traders_" do %>
           お知らせ<i class="fab fa-twitter-square twitter-btn"></i>
         <% end %>
         </li>

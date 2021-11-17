@@ -1,0 +1,41 @@
+<div class="space"></div>
+<div class="content">
+  <div class="container">
+  <h1>Sign up</h1>
+    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <ul>
+        <li class='error_message'><%= render "devise/shared/error_messages", resource: resource %></li>
+      </ul>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :nickname %> (3-25文字) <br />
+        <%= f.text_field :nickname, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", data: { confirm: "メールをご確認のうえ認証手続きをして下さい" } %>
+      </div>
+    <% end %>
+  </div>
+  <%= render "devise/shared/links" %>
+</div>
+<div class="space"></div>
+

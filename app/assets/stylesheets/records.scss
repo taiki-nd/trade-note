@@ -1,3 +1,51 @@
 // Place all the styles related to the records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.grid{
+  margin-top: 40px;
+  gap: 25px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.record{
+  width: 300px;
+  display: inline-block;
+}
+
+.recorded_img{
+  height: 200px;
+  width: 300px;
+  object-fit: cover;
+}
+
+.info{
+  margin: 5px 10px 0;
+  padding: 0;
+}
+
+.record_small_info{
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.created_by{
+  text-align: right;
+  margin-right: 10px;
+  color: #777777;
+  font-size: 0.8rem;
+}
+
+.link_to_user{
+  color: #777777;
+}
+
+.link_to_user:hover{
+  background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #55e900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

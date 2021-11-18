@@ -8,7 +8,8 @@
   <h3>通貨ペア別勝率/PF</h3>
   
   <h2><%= @user.nickname %>さんの取引履歴</h2>
-  <%= link_to 'もっと見る', "/", class: "link_word" %>
+  <%= render partial: "shared/index_record", locals: { records: @records } %>
+  <%= link_to 'もっと見る', users_record_path, class: "link_word" %>
   
   <div class="container">
     <h2><%= @user.nickname %>さんの専用エリア</h2>

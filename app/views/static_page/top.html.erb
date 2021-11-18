@@ -20,11 +20,15 @@
   </ul>
 
   <h2>みんなのトレードノートを見る</h2>
+  <%= render partial: "shared/index_record", locals: { records: @records } %>
   <%= link_to "もっと見る", "/", class: "link_word" %>
   <div class="space"></div>
   <div class="btns">
-    <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
-    <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
+    <% unless user_signed_in? %>
+      <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
+    <% else %>
+      <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
+    <% end %>
   </div>
 
   <div class="space"></div>

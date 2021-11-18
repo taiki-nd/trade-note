@@ -2,40 +2,7 @@
 <div class="content">
   <div class="container">
     <h1>new record</h1>
-    <%= form_with model: @record, local: true do |form| %>
-      <%= render 'shared/error_messages', model: form.object %>
-      <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください</p>
-      <%= form.file_field :image %>
-      <p class="explain">取引した日付の選択をしてください<b class="indispensable">(必須)</b></p>
-      <%= form.date_field :date, class:"record_new" %>
-      <p class="explain">取引時間帯の選択をしてください<b class="indispensable">(必須)</b></p>
-      <%= form.collection_select(:hour_id, Hour.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
-      <p class="explain">通貨ペアの選択をしてください<b class="indispensable">(必須)</b></p>
-      <%= form.collection_select(:pair_id, Pair.all, :id, :name, {}, {class:"select-box", id:"pair"})%>
-      <p class="explain">時間足の選択をしてください<b class="indispensable">(必須)</b></p>
-      <%= form.collection_select(:ashi_id, Ashi.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
-      <p class="explain">トレード種別の選択をしてください<b class="indispensable">(必須)</b></p>
-      <%= form.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
-      <p class="explain">メインインジケーターの選択をしてください</p>
-      <%= form.collection_select(:indi_main_id, IndiMain.all, :id, :name, {}, {class:"select-box", id:"indimain"}) %>
-      <p class="explain">サブインジケーターの選択をしてください</p>
-      <%= form.collection_select(:indi_sub_id, IndiSub.all, :id, :name, {}, {class:"select-box", id:"indisub"}) %>
-      <p class="explain">メインラインの選択をしてください</p>
-      <%= form.collection_select(:line_main_id, LineMain.all, :id, :name, {}, {class:"select-box", id:"linemain"}) %>
-      <p class="explain">サブラインの選択をしてください</p>
-      <%= form.collection_select(:line_sub_id, LineSub.all, :id, :name, {}, {class:"select-box", id:"linesub"}) %>
-      <p class="explain">注文方式の選択をしてください</p>
-      <%= form.collection_select(:order_id, Order.all, :id, :name, {}, {class:"select-box", id:"method"}) %>
-      <p class="explain">獲得金額を入力してください<b class="indispensable">(必須)</b></p>
-      <%= form.text_field :price_renge, placeholder: "獲得金額(2500, -1800など)　※公開されません" %>
-      <p class="explain">エントリーした根拠を入力してください<b class="indispensable">(必須)</b></p>
-      <%= form.text_area :entry_basis, placeholder: "エントリー根拠", size: "30x10" %>
-      <p class="explain">取引結果の理由を選択してください<b class="indispensable">(必須)</b></p>
-      <%= form.collection_select(:result_section_id, ResultSection.all, :id, :name, {}, {class:"select-box", id:"lose_reason"})%>
-      <p class="explain">本取引の総括を入力してください<b class="indispensable">(必須)</b></p>
-      <%= form.text_area :result_content, placeholder: "なぜ勝ったのか、なぜ負けたのか、その他", size: "30x10" %>
-      <%= form.submit "create record" %>
-    <% end %>
+    <%= render partial: "shared/form_record", locals: { record: @record } %>
   </div>
 </div>
 <div class="space"></div>

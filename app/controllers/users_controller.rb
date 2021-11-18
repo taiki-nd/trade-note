@@ -13,6 +13,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(nickname: params[:nickname])
+    @records = Record.includes(:user).order("created_at DESC").limit(4)
+  end
+
+  def record
+    @user = User.find_by(nickname: params[:nickname])
+    @records = Record.where(user_id: @user.id).includes(:user).order("created_at DESC")
   end
 
   private

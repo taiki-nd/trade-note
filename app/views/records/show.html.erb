@@ -1,0 +1,124 @@
+<div class="space"></div>
+<div class="content">
+  <h1><%= @record.pair.name %>での取引の詳細</h1>
+  <div class="record_content">
+    <div class="left_content">
+      <h2>取引画像</h2>
+      <% if @record.image.attached? %>
+        <%= link_to image_tag(@record.image, class:"recorded_img_show") %>
+      <% else %>
+        <%= link_to image_tag("no_image.jpg", class:"recorded_img_show") %>
+      <% end %>
+    </div>
+    <div class="right_content">
+      <h2>取引概要</h2>
+      <table>
+        <tr>
+          <th>取引日時</th>
+          <td><%= @record.date %>(<%= @record.hour.name %>時)</td>
+        </tr>
+        <tr>
+          <th>通貨ペア</th>
+          <td><%= @record.pair.name %> </td>
+        </tr>
+        <tr>
+          <th>時間足</th>
+          <td><%= @record.ashi.name %> </td>
+        </tr>
+        <tr>
+          <th>トレード種別</th>
+          <td><%= @record.kind.name %> </td>
+        </tr>
+        <% if @record.indi_main != nil %>
+          <tr>
+            <th>メインインジケーター</th>
+            <td><%= @record.indi_main.name %> </td>
+          </tr>
+        <% end %>
+        <% if @record.indi_sub != nil %>
+          <tr>
+            <th>サブインジケーター</th>
+            <td><%= @record.indi_sub.name %> </td>
+          </tr>
+        <% end %>
+        <% if @record.line_main != nil %>
+          <tr>
+            <th>メインライン</th>
+            <td><%= @record.line_main.name %> </td>
+          </tr>
+        <% end %>
+        <% if @record.line_sub != nil %>
+          <tr>
+            <th>サブライン</th>
+            <td><%= @record.line_sub.name %> </td>
+          </tr>
+        <% end %>
+        <% if @record.order != nil %>
+          <tr>
+            <th>注文方式</th>
+            <td><%= @record.order.name %> </td>
+          </tr>
+        <% end %>
+        <% if @record.price_renge > 0 %>
+          <tr>
+            <th>結果</th>
+            <td>利益獲得</td>
+          </tr>
+        <% elsif @record.price_renge < 0 %>
+          <tr>
+            <th>結果</th>
+            <td>損失</td>
+          </tr>
+        <% else %>
+          <tr>
+            <th>獲得値幅</th>
+            <td>記録なし</td>
+          </tr>
+        <% end %>
+        <tr>
+          <th>取引結果</th>
+          <td><%= @record.result_section.name %></td>
+        </tr>
+        <tr>
+          <th>created by</th>
+          <td><%= link_to @record.user.nickname, "/users/#{@record.user.nickname}", class: "link_word" %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="entry_basis">
+    <h2>エントリーした根拠</h2>
+    <div class="show_content">
+      <%= safe_join(@record.entry_basis.split("\n"),tag(:br)) %>
+    </div>
+  </div>
+  <div class="result">
+    <h2>今回の取引の総括</h2>
+    <div class="show_content">
+      <%= safe_join(@record.result_content.split("\n"),tag(:br)) %>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user.id == @record.user_id %>
+    <div class="container">
+      <h2>投稿者専用エリア</h2>
+      <div class="btns">
+        <%= link_to '編集', edit_record_path(@record.id), class: 'btn' %>
+        <%= link_to '削除', record_path(@record.id), method: :delete, data: { confirm: "削除しますか？" }, class: 'btn' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <h2>コメント</h2>
+    
+    <div>
+      <%#<i class="fas fa-eye like-btn"></i>_<%= @record.impressions_count %>
+    </div>
+    
+    <div class="comments">
+      <h3>＜コメント一覧＞</h3>
+      
+    </div>
+  </div>
+</div>
+<div class="space"></div>

@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2021_11_17_175450) do
     t.integer "order_id"
     t.float "price_renge"
     t.integer "result_section_id"
-    t.integer "result_content"
+    t.text "result_content"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

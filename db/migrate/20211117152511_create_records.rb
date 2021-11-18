@@ -13,7 +13,7 @@ class CreateRecords < ActiveRecord::Migration[6.1]
       t.integer :method_id
       t.float :price_renge
       t.integer :result_section_id
-      t.integer :result_content
+      t.text :result_content
       t.references :user
       t.timestamps
     end

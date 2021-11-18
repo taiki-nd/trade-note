@@ -1,37 +1,6 @@
 <div class="space"></div>
 <div class="content">
   <h1>全てのトレードノート</h1>
-  <div class="grid">
-    <% @records.each do |record| %>
-      <div class="record">
-      <% if record.image.attached? %>
-        <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
-      <% else %>
-        <%= link_to image_tag("sample.jpg", class:"recorded_img"), record_path(record.id) %>
-      <% end %>
-      <p class="info">
-        <%= record.pair.name %> →
-        <% if record.price_renge > 0 %>
-          <b>利益獲得！</b>
-        <% elsif record.price_renge < 0 %>
-          損失
-        <% else %>
-          損益判定なし
-        <% end %>
-      </p>
-      <div class="record_small_info">
-        <div class="likes_buttons_<%= record.id %>">
-          <%#<%= render partial: 'like_records/like', locals: { record: record } %>
-        </div>
-        <div>
-          <%#<i class="fas fa-eye like-btn"></i>_<%= record.impressions_count %>
-        </div>
-        <p class="created_by">
-          by <%= link_to record.user.nickname, "/users/#{record.user.nickname}", {class: "link_to_user"} %>
-        </p>
-      </div>
-    </div>
-    <% end %>
-  </div>
+  <%= render partial: "shared/index_record", locals: { records: @records } %>
 </div>
 <div class="space"></div>

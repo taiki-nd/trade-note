@@ -19,6 +19,19 @@ class RecordsController < ApplicationController
     end
   end
 
+  def edit
+    @record = Record.find(params[:id])
+  end
+
+  def update
+    @record = Record.find(params[:id])
+    if @record.update(record_params)
+      redirect_to action: :show
+    else
+      render action: :edit
+    end
+  end
+
   def show
     @record = Record.find(params[:id])
   end

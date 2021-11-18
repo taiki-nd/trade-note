@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
 
   before_action :authenticate_user!, except: :index
   before_action :set_record, only: [:edit, :update, :show, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @records = Record.includes(:user).order("created_at DESC")
@@ -42,6 +43,10 @@ class RecordsController < ApplicationController
     redirect_to records_path
   end
 
+  def search
+    @results = @q.result.order("created_at DESC")
+  end
+
   private
 
   def record_params
@@ -50,6 +55,10 @@ class RecordsController < ApplicationController
   
   def set_record
     @record = Record.find(params[:id])
+  end
+
+  def set_q
+    @q = Record.ransack(params[:q])
   end
 
 end

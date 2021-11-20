@@ -15,13 +15,16 @@ class UsersController < ApplicationController
     @user = User.find_by(nickname: params[:nickname])
     @records = Record.includes(:user).order("created_at DESC").limit(4)
 
-    @users_records = Record.where(user_id: @user.id)
+    @users_records = Record.where(user_id: @user.id).order(:date)
 
+    # 全体
     @sum_price = []
     sum = 0
-    @users_records do |record|
-      sum += record.price_renge
-      @sum_price << sum
+    @users_records.each do |record|
+      sum = sum + record.price_renge
+      date = record.date
+      data = [date, sum]
+      @sum_price << data
     end
 
     # 全体

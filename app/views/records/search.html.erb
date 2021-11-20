@@ -23,7 +23,7 @@
       <%= f.collection_select :result_section_id_eq,ResultSection.all,:id,:name,include_blank: '理由で検索' %>
       <%= f.submit '検索' %>
     <% end %>
-    <%= link_to "一覧に戻る", records_path %>
+    <%= link_to "一覧に戻る", records_path, class: "link_word" %>
   </div>
   <%= render partial: "shared/index_record", locals: { records: @results } %>
 </div>

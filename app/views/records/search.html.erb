@@ -3,6 +3,17 @@
   <h1>トレードノートの検索結果</h1>
   <div class="container">
     <%= search_form_for @q, url: search_records_path do |f| %>
+      <div class="search_date">
+        <div>
+          <%= f.date_field :created_at_gteq %>
+        </div>
+        <div>
+          <p>　　〜　　<p>
+        </div>
+        <div>
+          <%= f.date_field :created_at_lteq_end_of_day %>
+        </div>
+      </div>
       <%= f.collection_select :pair_id_eq,Pair.all,:id,:name,include_blank: '通貨ペアで検索' %>
       <%= f.collection_select :hour_id_eq,Hour.all,:id,:name,include_blank: '取引時間帯で検索' %>
       <%= f.collection_select :ashi_id_eq,Ashi.all,:id,:name,include_blank: '時間足で検索' %>

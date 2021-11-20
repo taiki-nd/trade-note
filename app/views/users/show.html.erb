@@ -1,14 +1,15 @@
 <div class="content">
   <h1><%= @user.nickname %>さんのページ</h1>
   <h2><%= @user.nickname %>さんの取引分析</h2>
-  
+
   <h3>獲得金額</h3>
   <%= column_chart @users_records.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
 
   <h3>資金推移</h3>
-  <%= line_chart @sum_price %>
+  <%= line_chart @sum_price, xtitle: "date", ytitle: "price" %>
 
   <h3>全体勝率</h3>
+  <%= pie_chart @rate %>
   
   <h3>通貨ペア別勝率/PF</h3>
   

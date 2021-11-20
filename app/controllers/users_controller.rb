@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @users_records = Record.where(user_id: @user.id).order(:date)
 
     # 全体
+      # 金額推移
     @sum_price = []
     sum = 0
     @users_records.each do |record|
@@ -26,9 +27,10 @@ class UsersController < ApplicationController
       data = [date, sum]
       @sum_price << data
     end
-
-    # 全体
-
+      # 勝率
+    @win_count = @users_records.where('price_renge > ?', 0).count
+    @lose_count = @users_records.where('price_renge < ?', 0).count
+    @rate = {"lose": @lose_count, "win": @win_count}
     
     # 今日
     today = Time.now.day

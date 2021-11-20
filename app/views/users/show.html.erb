@@ -12,6 +12,22 @@
   <%= pie_chart @rate %>
   
   <h3>通貨ペア別勝率/PF</h3>
+  <div class="pair_rate">
+    <% @users_records_pairs.each do |pair| %>
+      <%#　計算事項　%>
+          <% pair_name = Pair.find(pair).name%>
+          <% win_count_pair = @users_records.where(pair_id: pair).where('price_renge > ?', 0).count %>
+          <% lose_count_pair = @users_records.where(pair_id: pair).where('price_renge < ?', 0).count %>
+          <% rate_pair = {"lose": lose_count_pair, "win": win_count_pair} %>
+      <%# ここまで %>
+      <div>
+      <p class="data_info"><%= pair_name %></p>
+      <div class="pair_graph">
+        <%= pie_chart rate_pair %>
+      </div>
+      </div>
+    <% end %>
+  </div>
   
   <h2><%= @user.nickname %>さんの取引履歴</h2>
   <%= render partial: "shared/index_record", locals: { records: @records } %>

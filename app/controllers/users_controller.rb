@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     
     # 全体
       # 資金推移
-      @users_records_order_date = @users_records.order(:date)
+    @users_records_order_date = @users_records.order(:date)
     @sum_price = []
     sum = 0
     @users_records_order_date.each do |record|
@@ -33,6 +33,11 @@ class UsersController < ApplicationController
     @win_count = @users_records.where('price_renge > ?', 0).count
     @lose_count = @users_records.where('price_renge < ?', 0).count
     @rate = {"lose": @lose_count, "win": @win_count}
+
+      # PF
+    @profit = @users_records.where('price_renge > ?', 0).pluck(:price_renge).sum
+    @loss = @users_records.where('price_renge < ?', 0).pluck(:price_renge).sum
+    @pf = @profit / (@loss*-1)
 
       # 通貨ペア別勝率
     @users_records_pairs = @users_records.group(:pair_id).pluck(:pair_id)

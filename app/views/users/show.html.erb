@@ -52,16 +52,23 @@
   </div>
 
   <div class="space"></div>
-
-  <%= link_to "詳細分析をみる", "/", class: "btn" %>
   
   <h2><%= @user.nickname %>さんのトレードノート</h2>
   <%= render partial: "shared/index_record", locals: { records: @records } %>
-  <%= link_to 'もっと見る', users_record_path, class: "link_word" %>
+  <p><%= link_to 'もっと見る', users_record_path, class: "link_word" %></p>
+  
+  <div class="space"></div>
   
   <div class="container">
     <h2><%= @user.nickname %>さんの専用エリア</h2>
-    <%= link_to '編集', users_edit_path(current_user.nickname), class: 'btn' %>
+    <div class="btns">
+      <div>
+        <%= link_to 'ユーザー情報の編集', users_edit_path(current_user.nickname), class: 'btn' %>
+      </div>
+      <div>
+        <%= link_to "取引履歴を一覧形式で見る", "/", class: "btn" %>
+      </div>
+    </div>
   </div>
 
   <div class="space"></div>

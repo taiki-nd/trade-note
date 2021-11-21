@@ -8,7 +8,7 @@
   <h3>資金推移</h3>
   <%= line_chart @sum_price, xtitle: "date", ytitle: "price" %>
 
-  <h3>全体勝率</h3>
+  <h3>全体勝率/PF</h3>
   <div class="pair_graph">
     <%= pie_chart @rate %>
     <div>
@@ -50,8 +50,12 @@
       </div>
     <% end %>
   </div>
+
+  <div class="space"></div>
+
+  <%= link_to "詳細分析をみる", "/", class: "btn" %>
   
-  <h2><%= @user.nickname %>さんの取引履歴</h2>
+  <h2><%= @user.nickname %>さんのトレードノート</h2>
   <%= render partial: "shared/index_record", locals: { records: @records } %>
   <%= link_to 'もっと見る', users_record_path, class: "link_word" %>
   

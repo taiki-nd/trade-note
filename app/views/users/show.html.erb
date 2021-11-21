@@ -24,15 +24,28 @@
   <div class="pair_rate">
     <% @users_records_pairs.each do |pair| %>
       <%# 計算事項 %>
+          <%# ペアの名前 %>
           <% pair_name = Pair.find(pair).name%>
+          <%# 勝率計算 %>
           <% win_count_pair = @users_records.where(pair_id: pair).where('price_renge > ?', 0).count %>
           <% lose_count_pair = @users_records.where(pair_id: pair).where('price_renge < ?', 0).count %>
           <% rate_pair = {"lose": lose_count_pair, "win": win_count_pair} %>
+          <%# PF計算 %>
+          <% profit_pair = @users_records.where(pair_id: pair).where('price_renge > ?', 0).pluck(:price_renge).sum %>
+          <% loss_pair = @users_records.where(pair_id: pair).where('price_renge < ?', 0).pluck(:price_renge).sum %>
+          <% pf_pair = profit_pair / (loss_pair * -1) %>
       <%# ここまで %>
       <div>
         <p class="data_info"><%= pair_name %></p>
         <div class="pair_graph">
           <%= pie_chart rate_pair %>
+          <div>
+            <% if profit_pair == 0 || loss_pair == 0 %>
+              <p class="data_info">PF : 未判定</p>
+            <% else %>
+              <p class="data_info">PF : <%= pf_pair %></p>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

@@ -37,10 +37,13 @@ class UsersController < ApplicationController
       # PF
     @profit = @users_records.where('price_renge > ?', 0).pluck(:price_renge).sum
     @loss = @users_records.where('price_renge < ?', 0).pluck(:price_renge).sum
-    @pf = @profit / (@loss*-1)
+    @pf = @profit / (@loss * -1)
 
       # 通貨ペア別勝率
     @users_records_pairs = @users_records.group(:pair_id).pluck(:pair_id)
+
+      # 通貨ペア別PF
+    
 
     # 今日
     today = Time.now.day

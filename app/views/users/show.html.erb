@@ -16,7 +16,7 @@
       <% if @profit == 0 || @loss == 0 %>
         <p class="data_info">PF : 未判定</p>
       <% else %>
-        <p class="data_info">PF : <%= @pf %></p>
+        <p class="data_info">PF : <%= @pf.floor(2) %></p>
       <% end %>
     </div>
   </div>
@@ -44,7 +44,7 @@
             <% if profit_pair == 0 || loss_pair == 0 %>
               <p class="data_info">PF : 未判定</p>
             <% else %>
-              <p class="data_info">PF : <%= pf_pair %></p>
+              <p class="data_info">PF : <%= pf_pair.floor(2) %></p>
             <% end %>
           </div>
         </div>

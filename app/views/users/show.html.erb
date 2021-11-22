@@ -1,23 +1,41 @@
+<div class="space"></div>
 <div class="content">
   <h1><%= @user.nickname %>さんのページ</h1>
   <h2><%= @user.nickname %>さんの取引分析</h2>
 
-  <h3>獲得金額</h3>
-  <%= column_chart @users_records.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
-
   <h3>資金推移</h3>
+  <h4>取引期間全体</h4>
   <%= line_chart @sum_price, xtitle: "date", ytitle: "price" %>
+  <div class="space"></div>
+  <%= column_chart @users_records_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
+  <h4>今月</h4>
   <%= line_chart @sum_price_month, xtitle: "date", ytitle: "price" %>
+  <div class="space"></div>
+  <%= column_chart @users_records_month_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
 
-  <h3>全体勝率/PF</h3>
-  <div class="pair_graph">
-    <%= pie_chart @rate %>
-    <div>
-      <% if @profit == 0 || @loss == 0 %>
-        <p class="data_info">PF : 未判定</p>
-      <% else %>
-        <p class="data_info">PF : <%= @pf.floor(2) %></p>
-      <% end %>
+  <h3>勝率/PF</h3>
+  <div class="pair_rate">
+    <div class="pair_graph">
+      <h4>全体</h4>
+      <%= pie_chart @rate %>
+      <div>
+        <% if @profit == 0 || @loss == 0 %>
+          <p class="data_info">PF : 未判定</p>
+        <% else %>
+          <p class="data_info">PF : <%= @pf.floor(2) %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="pair_graph">
+      <h4>今月</h4>
+      <%= pie_chart @rate_month %>
+      <div>
+        <% if @profit_month == 0 || @loss_month == 0 %>
+          <p class="data_info">PF : 未判定</p>
+        <% else %>
+          <p class="data_info">PF : <%= @pf_month.floor(2) %></p>
+        <% end %>
+      </div>
     </div>
   </div>
   
@@ -45,6 +63,38 @@
               <p class="data_info">PF : 未判定</p>
             <% else %>
               <p class="data_info">PF : <%= pf_pair.floor(2) %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="space"></div>
+  
+  <div class="pair_rate">
+    <% @users_records_pairs_month.each do |pair| %>
+      <%# 計算事項 %>
+          <%# ペアの名前 %>
+          <% pair_name_month = Pair.find(pair).name%>
+          <%# 勝率計算 %>
+          <% win_count_pair_month = @users_records_month.where(pair_id: pair).where('price_renge > ?', 0).count %>
+          <% lose_count_pair_month = @users_records_month.where(pair_id: pair).where('price_renge < ?', 0).count %>
+          <% rate_pair_month = {"lose": lose_count_pair_month, "win": win_count_pair_month} %>
+          <%# PF計算 %>
+          <% profit_pair_month = @users_records_month.where(pair_id: pair).where('price_renge > ?', 0).pluck(:price_renge).sum %>
+          <% loss_pair_month = @users_records_month.where(pair_id: pair).where('price_renge < ?', 0).pluck(:price_renge).sum %>
+          <% pf_pair_month = profit_pair_month / (loss_pair_month * -1) %>
+      <%# ここまで %>
+      <div>
+        <p class="data_info"><%= pair_name_month %></p>
+        <div class="pair_graph">
+          <%= pie_chart rate_pair_month %>
+          <div>
+            <% if profit_pair_month == 0 || loss_pair_month == 0 %>
+              <p class="data_info">PF : 未判定</p>
+            <% else %>
+              <p class="data_info">PF : <%= pf_pair_month.floor(2) %></p>
             <% end %>
           </div>
         </div>

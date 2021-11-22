@@ -53,6 +53,7 @@ class UsersController < ApplicationController
     @one_month = Record.where('extract(month from date) = ?', now_month)
 
     @users_records_month = @users_records.where('extract(year from date) = ?', now_year).where('extract(month from date) = ?', now_month)
+    @users_records_month_order_date = @users_records_month.order(:date)
 
       # 資金推移
     @users_records_month_order_date = @users_records_month.order(:date)
@@ -65,9 +66,21 @@ class UsersController < ApplicationController
       @sum_price_month << data_month
     end
 
-    # 今日
-    today = Time.now.day
-    @one_day = Record.where('extract(day from date) = ?'), today
+      # 勝率
+    @win_count_month = @users_records_month.where('price_renge > ?', 0).count
+    @lose_count_month = @users_records_month.where('price_renge < ?', 0).count
+    @rate_month = {"lose": @lose_count_month, "win": @win_count_month}
+
+      # PF
+    @profit_month = @users_records_month.where('price_renge > ?', 0).pluck(:price_renge).sum
+    @loss_month = @users_records_month.where('price_renge < ?', 0).pluck(:price_renge).sum
+    @pf_month = @profit_month / (@loss_month * -1)
+
+      # 通貨ペア別勝率
+    @users_records_pairs_month = @users_records_month.group(:pair_id).pluck(:pair_id)
+
+      # 通貨ペア別PF
+
 
   end
 

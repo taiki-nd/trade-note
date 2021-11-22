@@ -52,6 +52,11 @@ h3{
   border-bottom: 3px solid #5eff00;
 }
 
+h4{
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+}
+
 .link_word{
   color: #777777;
 }

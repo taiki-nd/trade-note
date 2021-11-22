@@ -44,16 +44,15 @@ class UsersController < ApplicationController
 
       # 通貨ペア別PF
     
-
-    # 今日
-    today = Time.now.day
-    @one_day = Record.where('extract(day from date) = ?'), today
+    # 今年
+    now_year = Time.now.year
+    @one_year = Record.where('extract(year from date) = ?', now_year)
 
     # 今月
     now_month = Time.now.month
     @one_month = Record.where('extract(month from date) = ?', now_month)
 
-    @users_records_month = @users_records.where('extract(month from date) = ?', now_month)
+    @users_records_month = @users_records.where('extract(year from date) = ?', now_year).where('extract(month from date) = ?', now_month)
 
       # 資金推移
     @users_records_month_order_date = @users_records_month.order(:date)
@@ -66,9 +65,10 @@ class UsersController < ApplicationController
       @sum_price_month << data_month
     end
 
-    # 今年
-    now_year = Time.now.year
-    @one_year = Record.where('extract(year from date) = ?', now_year)
+    # 今日
+    today = Time.now.day
+    @one_day = Record.where('extract(day from date) = ?'), today
+
   end
 
   def record

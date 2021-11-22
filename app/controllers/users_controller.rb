@@ -53,6 +53,19 @@ class UsersController < ApplicationController
     now_month = Time.now.month
     @one_month = Record.where('extract(month from date) = ?', now_month)
 
+    @users_records_month = @users_records.where('extract(month from date) = ?', now_month)
+
+      # 資金推移
+    @users_records_month_order_date = @users_records_month.order(:date)
+    @sum_price_month = []
+    sum_month = 0
+    @users_records_month_order_date.each do |record|
+      sum_month = sum_month + record.price_renge
+      date_month = record.date
+      data_month = [date_month, sum_month]
+      @sum_price_month << data_month
+    end
+
     # 今年
     now_year = Time.now.year
     @one_year = Record.where('extract(year from date) = ?', now_year)

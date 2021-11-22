@@ -3,15 +3,17 @@
   <h1><%= @user.nickname %>さんのページ</h1>
   <h2><%= @user.nickname %>さんの取引分析</h2>
 
-  <h3>資金推移</h3>
-  <h4>取引期間全体</h4>
-  <%= line_chart @sum_price, xtitle: "date", ytitle: "price" %>
-  <div class="space"></div>
-  <%= column_chart @users_records_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
-  <h4>今月</h4>
-  <%= line_chart @sum_price_month, xtitle: "date", ytitle: "price" %>
-  <div class="space"></div>
-  <%= column_chart @users_records_month_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
+  <% if user_signed_in? && current_user.nickname == @user.nickname %>
+    <h3>資金推移</h3>
+    <h4>取引期間全体</h4>
+    <%= line_chart @sum_price, xtitle: "date", ytitle: "price", points: false %>
+    <div class="space"></div>
+    <%= column_chart @users_records_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
+    <h4>今月</h4>
+    <%= line_chart @sum_price_month, xtitle: "date", ytitle: "price" %>
+    <div class="space"></div>
+    <%= column_chart @users_records_month_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
+  <% end %>
 
   <h3>勝率/PF</h3>
   <div class="pair_rate">
@@ -71,7 +73,7 @@
   </div>
 
   <div class="space"></div>
-  
+
   <div class="pair_rate">
     <% @users_records_pairs_month.each do |pair| %>
       <%# 計算事項 %>
@@ -110,18 +112,20 @@
   
   <div class="space"></div>
   
-  <div class="container">
-    <h2><%= @user.nickname %>さんの専用エリア</h2>
-    <div class="btns">
-      <div>
-        <%= link_to 'ユーザー情報の編集', users_edit_path(current_user.nickname), class: 'btn' %>
-      </div>
-      <div>
-        <%= link_to "取引履歴を一覧形式で見る", "/", class: "btn" %>
+  <% if user_signed_in? && current_user.nickname == @user.nickname %>
+    <div class="container">
+      <h2><%= @user.nickname %>さんの専用エリア</h2>
+      <div class="btns">
+        <div>
+          <%= link_to 'ユーザー情報の編集', users_edit_path(current_user.nickname), class: 'btn' %>
+        </div>
+        <div>
+          <%= link_to "取引履歴を一覧形式で見る", "/", class: "btn" %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="space"></div>
+    <div class="space"></div>
+  <% end %>
 
 </div>

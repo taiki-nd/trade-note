@@ -14,6 +14,74 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(nickname: params[:nickname])
     @records = Record.includes(:user).order("created_at DESC").limit(4)
+
+    @users_records = Record.where(user_id: @user.id)
+    
+    # 全体
+      # 資金推移
+    @users_records_order_date = @users_records.order(:date)
+    @sum_price = []
+    sum = 0
+    @users_records_order_date.each do |record|
+      sum = sum + record.price_renge
+      date = record.date
+      data = [date, sum]
+      @sum_price << data
+    end
+
+      # 勝率
+    @win_count = @users_records.where('price_renge > ?', 0).count
+    @lose_count = @users_records.where('price_renge < ?', 0).count
+    @rate = {"lose": @lose_count, "win": @win_count}
+
+      # PF
+    @profit = @users_records.where('price_renge > ?', 0).pluck(:price_renge).sum
+    @loss = @users_records.where('price_renge < ?', 0).pluck(:price_renge).sum
+    @pf = @profit / (@loss * -1)
+
+      # 通貨ペア別勝率
+    @users_records_pairs = @users_records.group(:pair_id).pluck(:pair_id)
+
+      # 通貨ペア別PF
+    
+    # 今年
+    now_year = Time.now.year
+    @one_year = Record.where('extract(year from date) = ?', now_year)
+
+    # 今月
+    now_month = Time.now.month
+    @one_month = Record.where('extract(month from date) = ?', now_month)
+
+    @users_records_month = @users_records.where('extract(year from date) = ?', now_year).where('extract(month from date) = ?', now_month)
+    @users_records_month_order_date = @users_records_month.order(:date)
+
+      # 資金推移
+    @users_records_month_order_date = @users_records_month.order(:date)
+    @sum_price_month = []
+    sum_month = 0
+    @users_records_month_order_date.each do |record|
+      sum_month = sum_month + record.price_renge
+      date_month = record.date
+      data_month = [date_month, sum_month]
+      @sum_price_month << data_month
+    end
+
+      # 勝率
+    @win_count_month = @users_records_month.where('price_renge > ?', 0).count
+    @lose_count_month = @users_records_month.where('price_renge < ?', 0).count
+    @rate_month = {"lose": @lose_count_month, "win": @win_count_month}
+
+      # PF
+    @profit_month = @users_records_month.where('price_renge > ?', 0).pluck(:price_renge).sum
+    @loss_month = @users_records_month.where('price_renge < ?', 0).pluck(:price_renge).sum
+    @pf_month = @profit_month / (@loss_month * -1)
+
+      # 通貨ペア別勝率
+    @users_records_pairs_month = @users_records_month.group(:pair_id).pluck(:pair_id)
+
+      # 通貨ペア別PF
+
+
   end
 
   def record

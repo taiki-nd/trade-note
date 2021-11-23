@@ -43,8 +43,18 @@ h2:after{
 }
 
 h3{
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 1.3rem;
   margin: 15px;
+  padding: 0 50px 5px 5px;
+  border-left: 3px solid #fd3838;
+  border-bottom: 3px solid #5eff00;
+}
+
+h4{
+  padding: 1rem 1.5rem;
+  font-weight: bold;
 }
 
 .link_word{

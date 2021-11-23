@@ -24,15 +24,15 @@ class Record < ApplicationRecord
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :hour
-  belongs_to :ashi
-  belongs_to :pair
-  belongs_to :kind
-  belongs_to :line_main
-  belongs_to :line_sub
-  belongs_to :indi_main
-  belongs_to :indi_sub
-  belongs_to :order
-  belongs_to :result_section
+  belongs_to :hour, optional: true
+  belongs_to :ashi, optional: true
+  belongs_to :pair, optional: true
+  belongs_to :kind, optional: true
+  belongs_to :line_main, optional: true
+  belongs_to :line_sub, optional: true
+  belongs_to :indi_main, optional: true
+  belongs_to :indi_sub, optional: true
+  belongs_to :order, optional: true
+  belongs_to :result_section, optional: true
 
 end

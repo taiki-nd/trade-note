@@ -26,7 +26,6 @@
   <div class="btns">
     <% unless user_signed_in? %>
       <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
-    <% else %>
       <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
     <% end %>
   </div>

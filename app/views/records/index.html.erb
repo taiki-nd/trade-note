@@ -25,5 +25,8 @@
     <% end %>
   </div>
   <%= render partial: "shared/index_record", locals: { records: @records } %>
+  <div class="page">
+    <%= paginate @records %>
+  </div>
 </div>
 <div class="space"></div>

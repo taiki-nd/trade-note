@@ -86,12 +86,12 @@ class UsersController < ApplicationController
 
   def record
     @user = User.find_by(nickname: params[:nickname])
-    @records = Record.where(user_id: @user.id).includes(:user).order("created_at DESC")
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").page(params[:page]).per(16)
   end
 
   def records
     @user = User.find_by(nickname: params[:nickname])
-    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC")
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").page(params[:page]).per(16)
 
     # 全体
     @users_records_result_section = Record.where(user_id: @user.id).group(:result_section_id).pluck(:result_section_id)

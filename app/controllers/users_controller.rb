@@ -89,6 +89,20 @@ class UsersController < ApplicationController
     @records = Record.where(user_id: @user.id).includes(:user).order("created_at DESC")
   end
 
+  def records
+    @user = User.find_by(nickname: params[:nickname])
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC")
+
+    @users_records_result_section = Record.where(user_id: @user.id).group(:result_section_id).pluck(:result_section_id)
+    @result_graph = []
+    @users_records_result_section.each do |result_id|
+      result_section_name = ResultSection.find(result_id).name
+      result_section_count = Record.where(user_id: @user.id).where(result_section_id: result_id).count
+      result_data = [result_section_name, result_section_count]
+      @result_graph << result_data
+    end
+  end
+
   private
 
   def user_params

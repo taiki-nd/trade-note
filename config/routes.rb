@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get '/users/:nickname/records' => 'users#records', as: :users_records
   resources :records do
     collection do
       get 'search'

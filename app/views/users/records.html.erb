@@ -1,0 +1,19 @@
+<div class="space"></div>
+
+<div class="content">
+  <h1><%= @user.nickname %>さんの取引履歴</h1>
+  <%= bar_chart @result_graph,  xtitle: "count", points: false %>
+  <div class="space"></div>
+  <table>
+    <% @records.each do |record| %>
+    <tr>
+      <th class="date"><%= record.date %></th>
+      <td class="records_content"><%= record.pair.name %></td>
+      <td class="records_content"><%= record.result_section.name %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
+<div class="space"></div>
+

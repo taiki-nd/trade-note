@@ -2,7 +2,10 @@
 
 <div class="content">
   <h1><%= @user.nickname %>さんの取引履歴</h1>
+  <h4>全体</h4>
   <%= bar_chart @result_graph,  xtitle: "count", points: false %>
+  <h4>今月</h4>
+  <%= bar_chart @result_graph_month,  xtitle: "count", points: false %>
   <div class="space"></div>
   <table>
     <% @records.each do |record| %>

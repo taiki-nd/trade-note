@@ -5,7 +5,7 @@ class RecordsController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @records = Record.includes(:user).order("created_at DESC")
+    @records = Record.includes(:user).order(date: "DESC").page(params[:page]).per(16)
   end
 
   def new
@@ -44,7 +44,7 @@ class RecordsController < ApplicationController
   end
 
   def search
-    @results = @q.result.order("created_at DESC")
+    @results = @q.result.order(date: "DESC")
   end
 
   private

@@ -25,10 +25,12 @@
           <th>時間足</th>
           <td><%= @record.ashi.name %> </td>
         </tr>
+        <% if @record.kind != nil %>
         <tr>
           <th>トレード種別</th>
           <td><%= @record.kind.name %> </td>
         </tr>
+        <% end %>
         <% if @record.indi_main != nil %>
           <tr>
             <th>メインインジケーター</th>

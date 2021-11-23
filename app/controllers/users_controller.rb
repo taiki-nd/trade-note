@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(nickname: params[:nickname])
-    @records = Record.includes(:user).order("created_at DESC").limit(4)
+    @records = Record.includes(:user).order(date: "DESC").limit(4)
 
     @users_records = Record.where(user_id: @user.id)
     

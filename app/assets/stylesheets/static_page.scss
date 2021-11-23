@@ -13,12 +13,42 @@
   background-image: linear-gradient(70deg, #f86262, #dbdbdb, #b9ff90);
 }
 
-.benefit{
-  margin: 6px;
-  font-weight: bold;
-}
-
 .btns{
   display: flex;
   justify-content: space-around;
+}
+
+ul.list {
+	list-style: none;
+}
+
+ul.list li {
+	position: relative;
+	padding: 0.5rem 1rem 0.5rem 3rem;
+	margin-bottom:5px;
+	border-bottom: 1px solid #fd3838;
+}
+
+ul.list li:after,
+ul.list li:before {
+	content:'';
+	position: absolute;
+	transform: rotate(45deg);
+}
+
+ul.list li:before {
+	top: 0.7rem;
+	left: 0.2rem;
+	width: 12px;
+	height: 12px;
+	border: 2px solid #fd3838;
+}
+
+ul.list li:after {
+	top: 0.9rem;
+	left: 0.7rem;
+	width: 14px;
+	height: 14px;
+  border: 3px solid #5eff00;
+	transform: rotate(60deg);
 }

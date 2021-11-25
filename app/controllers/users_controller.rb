@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, except: [:update]
+  before_action :move_to_show, only: [:edit, :update, :records]
+
   def edit
-    @user = User.find_by(nickname: params[:nickname])
+    
   end
 
   def update
@@ -12,11 +15,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(nickname: params[:nickname])
-    @records = Record.includes(:user).order(date: "DESC").limit(4)
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").limit(4)
 
     @users_records = Record.where(user_id: @user.id)
     
+    if @users_records.count > 0
     # 全体
       # 資金推移
     @users_records_order_date = @users_records.order(:date)
@@ -43,7 +46,8 @@ class UsersController < ApplicationController
     @users_records_pairs = @users_records.group(:pair_id).pluck(:pair_id)
 
       # 通貨ペア別PF
-    
+    end
+
     # 今年
     now_year = Time.now.year
     @one_year = Record.where('extract(year from date) = ?', now_year)
@@ -55,6 +59,7 @@ class UsersController < ApplicationController
     @users_records_month = @users_records.where('extract(year from date) = ?', now_year).where('extract(month from date) = ?', now_month)
     @users_records_month_order_date = @users_records_month.order(:date)
 
+    if @users_records_month.count > 0
       # 資金推移
     @users_records_month_order_date = @users_records_month.order(:date)
     @sum_price_month = []
@@ -80,17 +85,15 @@ class UsersController < ApplicationController
     @users_records_pairs_month = @users_records_month.group(:pair_id).pluck(:pair_id)
 
       # 通貨ペア別PF
-
+    end
 
   end
 
   def record
-    @user = User.find_by(nickname: params[:nickname])
     @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").page(params[:page]).per(16)
   end
 
   def records
-    @user = User.find_by(nickname: params[:nickname])
     @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").page(params[:page]).per(50)
 
     # 全体
@@ -125,6 +128,16 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :email)
+  end
+
+  def set_user
+    @user = User.find_by(nickname: params[:nickname])
+  end
+
+  def move_to_show
+    unless user_signed_in? && current_user.nickname == @user.nickname
+      redirect_to action: :show
+    end
   end
 
 end

@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
 
   before_action :authenticate_user!, except: :index
   before_action :set_record, only: [:edit, :update, :show, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
 
   def index
@@ -55,6 +56,12 @@ class RecordsController < ApplicationController
   
   def set_record
     @record = Record.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in? && current_user.id == @record.user_id
+      redirect_to action: :show
+    end
   end
 
   def set_q

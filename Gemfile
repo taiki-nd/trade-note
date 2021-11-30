@@ -63,3 +63,4 @@ gem 'ransack'
 gem "chartkick"
 gem 'pry-rails'
 gem 'kaminari'
+gem 'redcarpet'

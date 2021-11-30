@@ -12,4 +12,18 @@
 .markdown{
   width: 60%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.post{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.post_title{
+  font-weight: bold;
+  font-size: 1.2rem;
 }

@@ -13,6 +13,9 @@
   </head>
 
   <body>
+  <% if content_for?(:body_attributes) %>
+    <%= yield(:body_attributes) %>
+  <% end %>
   <header id="header">
       
     <div class="heading" id="heading_id">
@@ -44,7 +47,9 @@
           <li class="navi"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <li class="navi"><%= link_to 'マイページ', "/users/#{current_user.nickname}" %></li>
           <li class="navi"><%= link_to '新規TradeNoteの作成', new_record_path %></li>
+          <div data-turbolinks="false">
           <li class="navi"><%= link_to '記事を書く', new_post_path %></li>
+          </div>
         <% else %>
           <li class="navi"><%= link_to 'ログイン', new_user_session_path %></li>
           <li class="navi"><%= link_to '新規登録', new_user_registration_path %></li>

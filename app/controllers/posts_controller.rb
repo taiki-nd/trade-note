@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
+
+  before_action :authenticate_user!, except: :index
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   # GET /posts or /posts.json
   def index
@@ -71,4 +74,11 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content, :title, :category_id).merge(user_id: current_user.id)
     end
+
+    def move_to_index
+      unless user_signed_in? && current_user.id == @post.user_id
+        redirect_to action: :show
+      end
+    end
+
 end

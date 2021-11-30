@@ -17,12 +17,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <p class="explain">タイトル<b class="indispensable">(必須)</b></p>
     <%= form.text_field :title %>
   </div>
 
+  <p class="explain">カテゴリーの選択をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
+
   <div class="field">
-    <%= form.label :content %>
+    <p class="explain">コンテンツ内容<b class="indispensable">(必須)</b></p>
     <%= form.text_area :content, { id: "markdown-editar"} %>
   </div>
 

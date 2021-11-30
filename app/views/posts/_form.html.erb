@@ -1,3 +1,6 @@
+<% content_for(:body_attributes) do %>
+<% end %>
+
 <%= javascript_pack_tag 'posts' %>
 
 <%= form_with(model: post) do |form| %>
@@ -12,6 +15,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
 
   <div class="field">
     <%= form.label :content %>

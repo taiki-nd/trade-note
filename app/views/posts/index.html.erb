@@ -2,25 +2,18 @@
 
 <div class="content">
 <h1>記事一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>title</th>
-      <td colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <th><%= post.title %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @posts.each do |post| %>
+    <div>
+      <%= link_to post.title, post %>
+    </div>
+      <div data-turbolinks="false">
+    <%= link_to 'Edit', edit_post_path(post) %>
+    </div>
+    <div>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div>
+  <% end %>
 
 </div>
 <div class="space"></div>

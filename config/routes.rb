@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
+  post 'posts/attach', to: 'posts#attach'
   devise_for :users
   root to: 'static_page#top'
   get 'privacy_policy', to: 'static_page#privacy'

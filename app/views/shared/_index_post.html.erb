@@ -5,16 +5,6 @@
         <%= link_to post.title, post, class: "link_word post_title" %>
       </div>
       <div class="space"></div>
-      <% if user_signed_in? && current_user.id == post.user_id %>
-      <div class="btns">
-        <div data-turbolinks="false">
-          <%= link_to 'Edit', edit_post_path(post), class: "link_word" %>　/　
-        </div>
-        <div>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: "link_word" %>
-        </div>
-      </div>
-      <% end %>
     </div>
   <% end %>
 </div>

@@ -26,7 +26,7 @@
 
   <h2>みんなのトレードノートを見る</h2>
   <%= render partial: "shared/index_record", locals: { records: @records } %>
-  <%= link_to "もっと見る", "/", class: "link_word" %>
+  <%= link_to "もっと見る", records_path, class: "link_word" %>
   <div class="space"></div>
   <div class="btns">
     <% unless user_signed_in? %>
@@ -38,7 +38,17 @@
   <div class="space"></div>
 
   <h2>最新記事</h2>
-  <%= link_to "もっと見る", "/", class: "link_word" %>
+  <%= render partial: "shared/index_post", locals: { posts: @posts } %>
+  <div class="space"></div>
+  <%= link_to "もっと見る", posts_path, class: "link_word" %>
+  <div class="space"></div>
+  <div class="btns">
+    <% unless user_signed_in? %>
+      <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
+      <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
+    <% end %>
+  </div>
+
   <div class="space"></div>
 
 </div>

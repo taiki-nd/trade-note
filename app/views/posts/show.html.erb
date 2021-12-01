@@ -4,6 +4,7 @@
 <div class="space"></div>
 
 <p class="title"><%= @post.title %></p>
+<p class="created_by">created by <%= link_to @post.user.nickname, "/users/#{@post.user.nickname}", {class: "link_to_user"} %></p>
 <div class="markdown_content">
   <%= markdown(@post.content) %>
 </div>

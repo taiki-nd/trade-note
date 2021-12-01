@@ -19,14 +19,16 @@
   gap: 25px;
   display: grid;
   place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .post{
-  width: 600px;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #000000;
 }
 
 .post_title{

@@ -112,14 +112,26 @@
 
   <div class="container">
     <h2>コメント</h2>
-    
+    <% if user_signed_in? %>
+      <%= form_with model: [@record, @comment_record],url: record_comment_records_path(@record), local: false do |form| %>
+        <%= form.text_area :comment, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <div class="btns">
+        <%= link_to "新規登録してコメントする", new_user_registration_path, class: "btn" %>
+        <%= link_to "ログインしてコメントする", new_user_session_path, class: "btn" %>
+      </div>
+    <% end %>
     <div>
       <%#<i class="fas fa-eye like-btn"></i>_<%= @record.impressions_count %>
     </div>
     
     <div class="comments">
       <h3>＜コメント一覧＞</h3>
-      
+      <div id="comments__area">
+        <%= render partial: 'comment_records/index', locals: { comments: @comment_records } %>
+      </div>
     </div>
   </div>
 </div>

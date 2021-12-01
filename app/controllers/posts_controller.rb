@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comment_post = CommentPost.new
+    @comment_posts = @post.comment_posts
   end
 
   # GET /posts/new

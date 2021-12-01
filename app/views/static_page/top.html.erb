@@ -30,8 +30,8 @@
   <div class="space"></div>
   <div class="btns">
     <% unless user_signed_in? %>
-      <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
-      <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
+      <%= link_to "新規登録してトレードノートを作る", new_user_registration_path, class: "btn" %>
+      <%= link_to "ログインしてトレードノートを作る", new_user_session_path, class: "btn" %>
     <% end %>
   </div>
 
@@ -44,8 +44,8 @@
   <div class="space"></div>
   <div class="btns">
     <% unless user_signed_in? %>
-      <%= link_to "新規登録してトレードノートを作る", "/", class: "btn" %>
-      <%= link_to "ログインしてトレードノートを作る", "/", class: "btn" %>
+      <%= link_to "新規登録してトレードノートを作る", new_user_registration_path, class: "btn" %>
+      <%= link_to "ログインしてトレードノートを作る", new_user_session_path, class: "btn" %>
     <% end %>
   </div>
 

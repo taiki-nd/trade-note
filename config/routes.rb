@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comment_posts
+  end
   post 'posts/attach', to: 'posts#attach'
   devise_for :users
   root to: 'static_page#top'
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   end
   get '/users/:nickname/records' => 'users#records', as: :users_records
   resources :records do
+    resources :comment_records
     collection do
       get 'search'
     end

@@ -1,5 +1,6 @@
 #error_explanation {
-  width: 450px;
+  width: 90%;
+  margin: 0 auto;
   border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
@@ -16,6 +17,11 @@
 
 #error_explanation ul li {
   font-size: 12px;
+}
+
+.error_alert{
+  width: 90%;
+  margin: 0 auto;
 }
 
 label {

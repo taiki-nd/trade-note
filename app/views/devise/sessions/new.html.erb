@@ -1,9 +1,13 @@
 <div class="space"></div>
 <div class="content">
   <div class="container">
-    <h1><span>Log in<span></h1>
+    <h1>Log in</h1>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
    
+      <div class='error_message'>
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+
       <div class="field">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true %>

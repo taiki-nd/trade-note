@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   end
 
   belongs_to :user
+  has_many :comment_posts, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category, optional: true

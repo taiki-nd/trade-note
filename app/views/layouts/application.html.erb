@@ -39,8 +39,8 @@
       <div class="space"></div>
       <ul class="navi_list">  
         <li class="navi"><%= link_to 'Top', root_path  %></li>
-        <li class="navi"><%= link_to '全てのトレードノート', records_path %></li>
-        <li class="navi"><%= link_to '全ての記事', posts_path %></li>
+        <li class="navi"><%= link_to 'TradeNote', records_path %></li>
+        <li class="navi"><%= link_to '記事', posts_path %></li>
       </ul>
       <ul class="navi_log">
         <% if user_signed_in? %>
@@ -48,7 +48,7 @@
           <li class="navi"><%= link_to 'マイページ', "/users/#{current_user.nickname}" %></li>
           <li class="navi"><%= link_to '新規TradeNoteの作成', new_record_path %></li>
           <div data-turbolinks="false">
-          <li class="navi"><%= link_to '記事を書く', new_post_path %></li>
+          <li class="navi"><%= link_to '新規記事の作成', new_post_path %></li>
           </div>
         <% else %>
           <li class="navi"><%= link_to 'ログイン', new_user_session_path %></li>

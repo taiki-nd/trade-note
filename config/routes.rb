@@ -22,5 +22,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get '/users/:nickname/followings' => 'relationships#followings', as: 'followings'
+  get '/users/:nickname/followers' => 'relationships#followers', as: 'followers' 
+  resources :relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

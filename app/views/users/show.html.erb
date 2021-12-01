@@ -1,6 +1,11 @@
 <div class="space"></div>
 <div class="content">
   <h1><%= @user.nickname %>さんのページ</h1>
+  <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
+  <div class="btns">
+    <%= link_to "フォロー : #{@user.followings.count}", "/users/#{ @user.nickname }/followings", class: "btn" %>
+    <%= link_to "フォロワー : #{@user.followers.count}", "/users/#{ @user.nickname }/followers", class: "btn" %>
+  </div>
   <h2><%= @user.nickname %>さんの取引分析</h2>
 
   <% if @users_records.count > 0 %>

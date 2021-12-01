@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
   get '/users/:nickname/records' => 'users#records', as: :users_records
   resources :records do
+    resources :comment_records
     collection do
       get 'search'
     end

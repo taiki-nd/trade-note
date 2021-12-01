@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    resources :comment_posts
+  end
   post 'posts/attach', to: 'posts#attach'
   devise_for :users
   root to: 'static_page#top'

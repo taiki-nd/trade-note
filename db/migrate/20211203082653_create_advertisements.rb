@@ -5,6 +5,7 @@ class CreateAdvertisements < ActiveRecord::Migration[6.1]
       t.text :af_link
       t.integer :rate_id
       t.integer :company_id
+      t.text :content
       t.timestamps
     end
   end

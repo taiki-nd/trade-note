@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_12_03_082653) do
     t.text "af_link"
     t.integer "rate_id"
     t.integer "company_id"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

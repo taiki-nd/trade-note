@@ -1,0 +1,13 @@
+<div class="space"></div>
+
+<div class="content">
+<h1><%= @user.nickname %>記事一覧</h1>
+<div class="post_grid">
+  <% @posts.each do |post| %>
+    <%= render partial: "shared/index_post", locals: { post: post } %>
+  <% end %>
+</div>
+  <%= paginate @posts %>
+
+</div>
+<div class="space"></div>

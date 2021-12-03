@@ -1,6 +1,11 @@
 <div class="space"></div>
 <div class="content">
   <h1><%= @user.nickname %>さんのページ</h1>
+  <div class="ad_area">
+    <p class="ad_info">レバレッジ888倍! & ゼロカット!</p>
+    <a href="https://clicks.affstrack.com/c?m=7814&c=445488"><img src="https://ads.affstrack.com/i/7814?c=445488"/></a>
+  </div>
+  <div class="space"></div>
   <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
   <div class="btns">
     <%= link_to "フォロー : #{@user.followings.count}", "/users/#{ @user.nickname }/followings", class: "btn" %>
@@ -21,6 +26,13 @@
       <div class="space"></div>
       <%= column_chart @users_records_month_order_date.group(:date).sum(:price_renge), xtitle: "date", ytitle: "price" %>
     <% end %>
+
+    <div class="space"></div>
+    <div class="ad_area">
+      <p class="ad_info">レバレッジ888倍! & ゼロカット!</p>
+      <a href="https://clicks.affstrack.com/c?m=7814&c=445488"><img src="https://ads.affstrack.com/i/7814?c=445488"/></a>
+    </div>
+    <div class="space"></div>
 
     <h3>勝率/PF</h3>
     <div class="pair_rate">

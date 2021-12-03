@@ -2,6 +2,10 @@ class AdvertisementsController < ApplicationController
 
   before_action :if_not_admin
 
+  def index
+    @ads = Advertisement.all
+  end
+
   def new
     @ad = Advertisement.new
   end

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/users/:nickname/followings' => 'relationships#followings', as: 'followings'
   get '/users/:nickname/followers' => 'relationships#followers', as: 'followers' 
   resources :relationships, only: [:create, :destroy]
-  
+
   resources :records do
     resources :comment_records
     collection do
@@ -31,6 +31,6 @@ Rails.application.routes.draw do
   end
   post 'posts/attach', to: 'posts#attach'
   
-  resources :advertisements, only: [:new, :create, :destroy]
+  resources :advertisements, only: [:index, :new, :create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -32,6 +32,6 @@ Rails.application.routes.draw do
   end
   post 'posts/attach', to: 'posts#attach'
   
-  resources :advertisements, only: [:index, :new, :create, :destroy]
+  resources :advertisements
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

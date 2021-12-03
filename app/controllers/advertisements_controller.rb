@@ -15,6 +15,19 @@ class AdvertisementsController < ApplicationController
     redirect_to advertisements_path
   end
 
+  def edit
+    @ad = Advertisement.find(params[:id])
+  end
+
+  def update
+    @ad = Advertisement.find(params[:id])
+    if @ad.update(ad_params)
+      redirect_to action: :index
+    else
+      render action: :edit
+    end
+  end
+
   def destroy
     @ad = Advertisement.find(params[:id])
     @ad.destroy
@@ -24,7 +37,7 @@ class AdvertisementsController < ApplicationController
   private
 
   def ad_params
-    params.require(:advertisement).permit(:img_url, :af_link, :rate_id, :company_id)
+    params.require(:advertisement).permit(:img_url, :af_link, :rate_id, :company_id, :content)
   end
 
   def if_not_admin

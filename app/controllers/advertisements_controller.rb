@@ -12,7 +12,7 @@ class AdvertisementsController < ApplicationController
 
   def create
     @ad = Advertisement.create(ad_params)
-    redirect_to root_path
+    redirect_to advertisements_path
   end
 
   def destroy

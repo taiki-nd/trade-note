@@ -2,6 +2,8 @@
 
 <div class="content">
   <h1>advertisement</h1>
+  <%= link_to "NEW Ad", new_advertisement_path, class: "btn" %>
+  <div class="space"></div>
   <% @ads.each do |ad| %>
     <p>id: <%= ad.id %></p>
     <div>

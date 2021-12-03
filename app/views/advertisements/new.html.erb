@@ -8,6 +8,7 @@
     <%= form.text_field :af_link, placeholder: 'link' %>
     <%= form.collection_select(:rate_id, Rate.all, :id, :name, {}, {class:"select-box", id:"ad_rate"}) %>
     <%= form.collection_select(:company_id, Company.all, :id, :name, {}, {class:"select-box", id:"ad_rate"}) %>
+    <%= form.text_area :content, placeholder: 'content', size: "30x10" %>
     <%= form.submit "create ad" %>
     <% end %>
   </div>

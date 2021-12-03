@@ -1,3 +1,18 @@
 // Place all the styles related to the advertisements controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.ad_area{
+  text-align: center;
+}
+
+.ad_info{
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: -webkit-linear-gradient(45deg, #ff0000, #777777, #5eff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

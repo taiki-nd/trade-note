@@ -7,7 +7,7 @@
         <div class="follow_members">
           <li>
             <p><%= link_to user.nickname, user_path(user), class: 'link_word' %></p>
-            <p class="relationship_info">フォロー数: <%= user.followings.count %>　/　フォロワー数: <%= user.followers.count %>　/　TradeNote数: <%= user.records.count %></p>
+            <p class="relationship_info">フォロー数: <%= user.followings.count %>　/　フォロワー数: <%= user.followers.count %>　/　TradeNote数: <%= user.records.count %>　/　投稿記事数: <%= user.posts.count %></p>
           </li>
         </div>
       <% end %>

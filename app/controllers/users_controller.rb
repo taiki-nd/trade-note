@@ -94,7 +94,7 @@ class UsersController < ApplicationController
   end
 
   def post
-    @posts = Post.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(16)
+    @posts = Post.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(20)
   end
 
   def records

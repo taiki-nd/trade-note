@@ -139,7 +139,19 @@
       <%= render partial: "shared/index_record", locals: { record: record } %>
     <% end %>
   </div>
+  <div class="space"></div>
   <p><%= link_to 'もっと見る', users_record_path, class: "link_word" %></p>
+  
+  <div class="space"></div>
+
+  <h2><%= @user.nickname %>さんの記事</h2>
+  <div class="post_grid">
+    <% @posts.each do |post| %>
+      <%= render partial: "shared/index_post", locals: { post: post } %>
+    <% end %>
+  </div>
+  <div class="space"></div>
+  <p><%= link_to 'もっと見る', users_post_path, class: "link_word" %></p>
   
   <div class="space"></div>
   

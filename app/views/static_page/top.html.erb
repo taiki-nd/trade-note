@@ -42,7 +42,11 @@
   <div class="space"></div>
 
   <h2>最新記事</h2>
-  <%= render partial: "shared/index_post", locals: { posts: @posts } %>
+  <div class="post_grid">
+    <% @posts.each do |post| %>
+      <%= render partial: "shared/index_post", locals: { post: post } %>
+    <% end %>
+  </div>
   <div class="space"></div>
   <%= link_to "もっと見る", posts_path, class: "link_word" %>
   <div class="space"></div>

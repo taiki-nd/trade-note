@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get '/users/:nickname/post' => 'users#post', as: :users_post
   get '/users/:nickname/records' => 'users#records', as: :users_records
   get '/users/:nickname/followings' => 'relationships#followings', as: 'followings'
   get '/users/:nickname/followers' => 'relationships#followers', as: 'followers' 

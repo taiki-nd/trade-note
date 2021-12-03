@@ -134,7 +134,11 @@
   <div class="space"></div>
   
   <h2><%= @user.nickname %>さんのトレードノート</h2>
-  <%= render partial: "shared/index_record", locals: { records: @records } %>
+  <div class="grid">
+    <% @records.each do |record| %>
+      <%= render partial: "shared/index_record", locals: { record: record } %>
+    <% end %>
+  </div>
   <p><%= link_to 'もっと見る', users_record_path, class: "link_word" %></p>
   
   <div class="space"></div>

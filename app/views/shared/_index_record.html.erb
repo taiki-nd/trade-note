@@ -1,5 +1,4 @@
-<div class="grid">
-  <% records.each do |record| %>
+
     <div class="record">
     <% if record.image.attached? %>
       <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
@@ -28,5 +27,4 @@
       </p>
     </div>
   </div>
-  <% end %>
-</div>
+  

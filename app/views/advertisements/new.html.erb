@@ -3,14 +3,7 @@
 <div class="content">
   <div class="container">
     <h1>create ad</h1>
-    <%= form_with model: @ad, local: true do |form| %>
-    <%= form.text_field :img_url, placeholder: 'img' %>
-    <%= form.text_field :af_link, placeholder: 'link' %>
-    <%= form.collection_select(:rate_id, Rate.all, :id, :name, {}, {class:"select-box", id:"ad_rate"}) %>
-    <%= form.collection_select(:company_id, Company.all, :id, :name, {}, {class:"select-box", id:"ad_rate"}) %>
-    <%= form.text_area :content, placeholder: 'content', size: "30x10" %>
-    <%= form.submit "create ad" %>
-    <% end %>
+    <%= render partial: "shared/form_ad", locals: { ad: @ad } %>
   </div>
 </div>
 

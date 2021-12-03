@@ -1,6 +1,7 @@
 class AdvertisementsController < ApplicationController
 
   before_action :if_not_admin
+  before_action :set_ad, only: [:edit, :update, :destroy]
 
   def index
     @ads = Advertisement.all
@@ -16,11 +17,9 @@ class AdvertisementsController < ApplicationController
   end
 
   def edit
-    @ad = Advertisement.find(params[:id])
   end
 
   def update
-    @ad = Advertisement.find(params[:id])
     if @ad.update(ad_params)
       redirect_to action: :index
     else
@@ -29,7 +28,6 @@ class AdvertisementsController < ApplicationController
   end
 
   def destroy
-    @ad = Advertisement.find(params[:id])
     @ad.destroy
     redirect_to advertisements_path
   end
@@ -38,6 +36,10 @@ class AdvertisementsController < ApplicationController
 
   def ad_params
     params.require(:advertisement).permit(:img_url, :af_link, :rate_id, :company_id, :content)
+  end
+
+  def set_ad
+    @ad = Advertisement.find(params[:id])
   end
 
   def if_not_admin

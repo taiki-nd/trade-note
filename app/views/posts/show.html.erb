@@ -5,6 +5,10 @@
 
 <p class="title"><%= @post.title %></p>
 <p class="created_by">created by <%= link_to @post.user.nickname, "/users/#{@post.user.nickname}", {class: "link_to_user"} %></p>
+<div class="ad_area">
+  <p class="ad_info">レバレッジ888倍! & ゼロカット!</p>
+  <a href="https://clicks.affstrack.com/c?m=7814&c=445488"><img src="https://ads.affstrack.com/i/7814?c=445488"/></a>
+</div>
 <div class="markdown_content">
   <%= markdown(@post.content) %>
 </div>
@@ -22,6 +26,11 @@
     </div>
   </div>
 <% end %>
+
+<div class="ad_area">
+  <p class="ad_info">レバレッジ888倍! & ゼロカット!</p>
+  <a href="https://clicks.affstrack.com/c?m=7814&c=445488"><img src="https://ads.affstrack.com/i/7814?c=445488"/></a>
+</div>
 
 <div class="container">
   <h2>コメント</h2>

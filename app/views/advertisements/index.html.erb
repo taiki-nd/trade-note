@@ -6,6 +6,7 @@
     <p>id: <%= ad.id %></p>
     <div>
       <%= link_to (image_tag(ad.img_url)), ad.af_link %>
+      <%= link_to '削除', advertisement_path(ad.id), method: :delete, data: { confirm: "削除しますか？" }, class: 'btn' %>
     </div>
   <% end %>
 </div>

@@ -15,6 +15,12 @@ class AdvertisementsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @ad = Advertisement.find(params[:id])
+    @ad.destroy
+    redirect_to advertisements_path
+  end
+
   private
 
   def ad_params

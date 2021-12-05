@@ -9,7 +9,7 @@
   <div class="container">
     <div class="btns">
       <%= link_to "記事一覧", posts_path, class: "btn" %>
-      <%= link_to "マイページ", "users/#{current_user.nickname}", class: "btn" %>
+      <%= link_to "マイページ", "/users/#{current_user.nickname}", class: "btn" %>
       <%= link_to "Top", "/", class: "btn" %>
     </div>
   </div>

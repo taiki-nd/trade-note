@@ -15,9 +15,10 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    if @record.save
-      redirect_to records_path
-    else
+    @ad_xm = Advertisement.find(1)
+    @ad_titan = Advertisement.find(4)
+    @ad_exness = Advertisement.find(5)
+    unless @record.save
       render :new
     end
   end

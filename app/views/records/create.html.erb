@@ -1,0 +1,36 @@
+<div class="space"></div>
+<div class="content">
+
+  <h1>TradeNoteの作成が完了しました</h1>
+  <p>
+  TradeNoteを作成していただきありがとうございます。
+  </p>
+
+  <div class="container">
+    <div class="btns">
+      <%= link_to "TradeNote", records_path, class: "btn" %>
+      <%= link_to "マイページ", "users/#{current_user.nickname}", class: "btn" %>
+      <%= link_to "Top", "/", class: "btn" %>
+    </div>
+  </div>
+
+  <h2>TradeNote運営おすすめ海外fx会社</h2>
+  <div class="ad_create">
+    <div>
+      <h3>XM</h3>
+      <%= link_to image_tag(@ad_xm.img_url), @ad_xm.af_link %>
+      <p class="ad_info_create"><%= @ad_xm.content %></p>
+    </div>
+    <div>
+      <h3>Titan Fx</h3>
+      <%= link_to image_tag(@ad_titan.img_url), @ad_titan.af_link %>
+      <p class="ad_info_create"><%= @ad_titan.content %></p>
+    </div>
+    <div>
+      <h3>EXNESS</h3>
+      <%= link_to image_tag(@ad_exness.img_url), @ad_exness.af_link %>
+      <p class="ad_info_create"><%= @ad_exness.content %></p>
+    </div>
+  </div>
+</div>
+<div class="space"></div>

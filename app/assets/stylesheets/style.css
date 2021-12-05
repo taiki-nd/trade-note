@@ -61,7 +61,7 @@ h4{
   width: fit-content;
   font-size: 1.2rem;
   font-weight: bold;
-  background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #55e900);
+  background: -webkit-linear-gradient(0deg, #ff0000, #777777, #5eff00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

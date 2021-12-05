@@ -7,9 +7,20 @@
   </div>
   <div class="space"></div>
   <%= render partial: "relationships/relationship_btn", locals: { user: @user } %>
-  <div class="btns">
-    <%= link_to "フォロー : #{@user.followings.count}", "/users/#{ @user.nickname }/followings", class: "btn" %>
-    <%= link_to "フォロワー : #{@user.followers.count}", "/users/#{ @user.nickname }/followers", class: "btn" %>
+
+  <div class="container">
+    <h2>プロフィール</h2>
+    <p>name: <b class="highlight"><%= @user.nickname %></b></p>
+    <div class="space"></div>
+    <div class="btns">
+      <%= link_to "フォロー : #{@user.followings.count}", "/users/#{ @user.nickname }/followings", class: "btn" %>
+      <%= link_to "フォロワー : #{@user.followers.count}", "/users/#{ @user.nickname }/followers", class: "btn" %>
+    </div>
+    <div class="space"></div>
+      <ul>
+        <li>TradeNote数: <%= link_to @user.records.count, users_post_path, class: "link_word" %></li>
+        <li>投稿記事数: <%= link_to @user.posts.count, users_post_path, class: "link_word" %></li>
+      </ul>
   </div>
 
   <h2><%= @user.nickname %>さんの取引分析</h2>
@@ -18,7 +29,7 @@
 
     <% if user_signed_in? && current_user.nickname == @user.nickname %>
       <h3>資金推移</h3>
-      <p class="highlight">資金推移は<%= @user.nickname %>のみに表示されます</p>
+      <p class="highlight">資金推移は<%= @user.nickname %>さんのみに表示されます</p>
       <h4>取引期間全体</h4>
       <%= line_chart @sum_price, xtitle: "date", ytitle: "price"   %>
       <div class="space"></div>

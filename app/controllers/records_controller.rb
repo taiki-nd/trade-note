@@ -2,6 +2,7 @@ class RecordsController < ApplicationController
 
   before_action :authenticate_user!, except: :index
   before_action :set_record, only: [:edit, :update, :show, :destroy]
+  before_action :set_ad, only: [:create, :update]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
 
@@ -15,9 +16,6 @@ class RecordsController < ApplicationController
 
   def create
     @record = Record.new(record_params)
-    @ad_xm = Advertisement.find(1)
-    @ad_titan = Advertisement.find(4)
-    @ad_exness = Advertisement.find(5)
     unless @record.save
       render :new
     end
@@ -28,10 +26,10 @@ class RecordsController < ApplicationController
   end
 
   def update
-    
-    if @record.update(record_params)
-      redirect_to action: :show
-    else
+    @ad_xm = Advertisement.find(1)
+    @ad_titan = Advertisement.find(4)
+    @ad_exness = Advertisement.find(5)
+    unless @record.update(record_params)
       render action: :edit
     end
   end
@@ -58,6 +56,12 @@ class RecordsController < ApplicationController
   
   def set_record
     @record = Record.find(params[:id])
+  end
+
+  def set_ad
+    @ad_xm = Advertisement.find(1)
+    @ad_titan = Advertisement.find(4)
+    @ad_exness = Advertisement.find(5)
   end
 
   def move_to_index

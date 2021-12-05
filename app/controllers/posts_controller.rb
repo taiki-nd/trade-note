@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_ad, only: [:create, :update]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   # GET /posts or /posts.json
@@ -27,9 +28,6 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    @ad_xm = Advertisement.find(1)
-    @ad_titan = Advertisement.find(4)
-    @ad_exness = Advertisement.find(5)
     unless @post.save
       render :new
     end
@@ -37,14 +35,8 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: "Post was successfully updated." }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    unless @post.update(post_params)
+      render action: :edit
     end
   end
 
@@ -66,6 +58,12 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_ad
+      @ad_xm = Advertisement.find(1)
+      @ad_titan = Advertisement.find(4)
+      @ad_exness = Advertisement.find(5)
     end
 
     # Only allow a list of trusted parameters through.

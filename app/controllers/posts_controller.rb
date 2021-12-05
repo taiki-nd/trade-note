@@ -27,15 +27,11 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: "Post was successfully created." }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
+    @ad_xm = Advertisement.find(1)
+    @ad_titan = Advertisement.find(4)
+    @ad_exness = Advertisement.find(5)
+    unless @post.save
+      render :new
     end
   end
 

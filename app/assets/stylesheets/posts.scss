@@ -41,3 +41,25 @@
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+@media screen and (max-width: 767px){
+	
+	.post_grid{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .markdown_content{
+    width: 100%;
+  }
+
+  .special_btn{
+    margin: 12px;
+  }
+
+  .post_title{
+    font-size: 0.9rem;
+  }
+
+}

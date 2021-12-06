@@ -55,3 +55,13 @@ form input[type="submit"]:hover{
   display: flex;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 767px){
+	
+	.search_date{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+}

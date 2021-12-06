@@ -14,10 +14,10 @@
   <div class="container">
     <h2>投稿者専用エリア</h2>
     <div class="btns">
-      <div data-turbolinks="false">
+      <div data-turbolinks="false" class="special_btn">
         <%= link_to '編集', edit_post_path(@post.id), class: "btn" %>
       </div>
-      <div>
+      <div class="special_btn">
         <%= link_to '削除', post_path(@post.id), method: :delete, data: { confirm: "削除しますか？" }, class: "btn" %>
       </div>
     </div>

@@ -17,13 +17,13 @@
 
   <p class="explain">取引した日付の選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.date_field :date, class:"record_new" %>
-  <p class="explain">取引時間帯の選択をしてください<b class="indispensable">(必須)</b></p>
+  <p class="explain">取引時間帯の選択をしてください</p>
   <%= form.collection_select(:hour_id, Hour.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
   <p class="explain">通貨ペアの選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:pair_id, Pair.all, :id, :name, {}, {class:"select-box", id:"pair"})%>
   <p class="explain">時間足の選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:ashi_id, Ashi.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
-  <p class="explain">トレード種別の選択をしてください<b class="indispensable">(必須)</b></p>
+  <p class="explain">トレード種別の選択をしてください</p>
   <%= form.collection_select(:kind_id, Kind.all, :id, :name, {}, {class:"select-box", id:"ashi"}) %>
   <p class="explain">メインインジケーターの選択をしてください</p>
   <%= form.collection_select(:indi_main_id, IndiMain.all, :id, :name, {}, {class:"select-box", id:"indimain"}) %>

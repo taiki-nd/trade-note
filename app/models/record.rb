@@ -2,12 +2,10 @@ class Record < ApplicationRecord
 
   with_options presence: true do
     validates :date
-    validates :hour_id
     validates :pair_id
     validates :ashi_id
     validates :price_renge, numericality: true
     validates :entry_basis
-    validates :order_id
     validates :result_section_id
     validates :result_content
   end

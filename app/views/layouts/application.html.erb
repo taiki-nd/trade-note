@@ -93,45 +93,72 @@
 
       <p class="catch">自分のトレードノートが世界最高の取引教材となるその時まで</p>
 
-      <h2>トレードノートから取引を分析</h2>
       <div class="show_content">
-        <p class="highlight">新規登録ログインしてトレードノートを作ろう！</p>
+
+        <h2>トレードノートから取引を分析</h2>
+        
+          <p class="highlight">新規登録ログインしてトレードノートを作って分析</p>
+          <p>
+          自身の取引を記録することでデータを作りグラフ化していきます。<br>
+          自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！
+          </p>
+          <ul class="list">
+            <li>資産推移のグラフ化</li>
+            <%= image_tag "graph", class: "graph_img" %>
+            <li>通貨ペア別の勝率とPF</li>
+            <%= image_tag "pf", class: "graph_img" %>
+            <li>改善ポイントの明確化</li>
+            <%= image_tag "result", class: "graph_img" %>
+          </ul>
+          それぞれ、全体の情報と今月分のデータがわかります。
+        
+        <div class="space"></div>
+        
+        <div class="btns">
+          <%= link_to "新規登録してトレードノートを作る", new_user_registration_path, class: "btn" %>
+          <%= link_to "ログインしてトレードノートを作る", new_user_session_path, class: "btn" %>
+        </div>
+
+        <h2>トレードノートを公開するメリット</h2>
+          <ul class="list">
+            <li>ポジポジ病が減る</li>
+            <li>取引ルールが明確になる</li>
+            <li>取引ルールを守れるようになる</li>
+            <li>自身の取引に対する理解が深まる</li>
+            <li>取引ルールのブラッシュアップ</li>
+            <li>取引記録に対するフィードバック</li>
+            <li>他トレーダーの記録で勉強できる</li>
+          </ul>
+      </div>
+
+      <h1>記事を書こう！</h1>
+
+      <div class="show_content">
+
+        <p class="highlight">新規登録ログインして記事を書いて収益化</p>
+        <h2>自分の書いた記事にアフィリエイトリンクを貼ろう！</h2>
         <p>
-        自身の取引を記録することでデータを作りグラフ化していきます。<br>
-        自分の取引を客観的に見て取引精度をあげ、資産を増やしていきましょう！
+        投資に関する内容の記事を投稿することができます。またその記事内にアフィリエイトリンクを貼り付けて記事の収益化ができます。
         </p>
         <ul class="list">
-          <li>資産推移のグラフ化</li>
-          <%= image_tag "graph", class: "graph_img" %>
-          <li>通貨ペア別の勝率とPF</li>
-          <%= image_tag "pf", class: "graph_img" %>
-          <li>改善ポイントの明確化</li>
-          <%= image_tag "result", class: "graph_img" %>
+          <li>簡単に記事が書ける</li>
+          <li>投資関連のアフィリエイトリンクの貼り付けができる</li>
+          <li>記事を書くことで考え方を整理することができる</li>
         </ul>
-        それぞれ、全体の情報と今月分のデータがわかります。
+        <b>注意: 記事作成、アフィリエイトリンクの貼り付けにはルールが設けられています。詳しくは<%= link_to "こちら", "/", class: "link_word" %>をご覧ください。</b>
+
       </div>
 
       <div class="space"></div>
-      
+        
       <div class="btns">
-        <%= link_to "新規登録してトレードノートを作る", new_user_registration_path, class: "btn" %>
-        <%= link_to "ログインしてトレードノートを作る", new_user_session_path, class: "btn" %>
-      </div>
-
-      <h2>トレードノートを公開するメリット</h2>
-      <div class="show_content">
-        <ul class="list">
-          <li>ポジポジ病が減る</li>
-          <li>取引ルールが明確になる</li>
-          <li>取引ルールを守れるようになる</li>
-          <li>自身の取引に対する理解が深まる</li>
-          <li>取引ルールのブラッシュアップ</li>
-          <li>取引記録に対するフィードバック</li>
-          <li>他トレーダーの記録で勉強できる</li>
-        </ul>
+        <%= link_to "新規登録して記事を作る", new_user_registration_path, class: "btn" %>
+        <%= link_to "ログインして記事を作る", new_user_session_path, class: "btn" %>
       </div>
     </div>
   <% end %>
+
+  <div class="space"></div>
 
   <footer id="footer">
     <div class="space"></div>

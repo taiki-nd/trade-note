@@ -50,3 +50,8 @@ form input[type="submit"]:hover{
   color: #ea352d;
   list-style: none;
 }
+
+.post_images{
+  display: flex;
+  justify-content: space-around;
+}

@@ -1,7 +1,7 @@
 
     <div class="record">
-    <% if record.image.attached? %>
-      <%= link_to image_tag(record.image, class:"recorded_img"), record_path(record.id) %>
+    <% if record.images.attached? %>
+      <%= link_to image_tag(record.images[0], class:"recorded_img"), record_path(record.id) %>
     <% else %>
       <%= link_to image_tag("sample.jpg", class:"recorded_img"), record_path(record.id) %>
     <% end %>

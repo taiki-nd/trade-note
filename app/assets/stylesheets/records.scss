@@ -62,7 +62,12 @@
 
 .recorded_img_show{
   width: 90%;
-  margin: 0 auto;
+  margin: 0 auto 25px;
+}
+
+.record_images{
+  display: flex;
+  flex-direction: column;
 }
 
 .comment_area{

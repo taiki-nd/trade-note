@@ -60,3 +60,15 @@ li:after {
   border: 3px solid #5eff00;
 	transform: rotate(60deg);
 }
+
+@media screen and (max-width: 767px){
+
+	.catch{
+		font-size: 20px;
+	}
+	
+	.btns{
+		flex-direction: column;
+	}
+
+	}

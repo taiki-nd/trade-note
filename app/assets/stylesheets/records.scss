@@ -130,3 +130,20 @@ table th:after{
   background-color: #eee;
   padding: 10px 0;
 }
+
+@media screen and (max-width: 767px){
+	
+	.record_content{
+    flex-direction: column;
+  }
+
+  .left_content,
+  .right_content{
+    width: 100%;
+  }
+
+  .show_content{
+    width: 100%;
+  }
+
+}

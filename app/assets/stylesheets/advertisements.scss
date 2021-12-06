@@ -25,3 +25,11 @@
 .ad_info_create{
   width: 300px;
 }
+
+@media screen and (max-width: 767px){
+	
+	.ad_create{
+    flex-direction: column;
+	}
+
+	}

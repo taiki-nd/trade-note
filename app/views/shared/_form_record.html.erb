@@ -1,7 +1,7 @@
 <%= form_with model: record, local: true do |form| %>
   <%= render 'shared/error_messages', model: form.object %>
   
-  <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください</p>
+  <p class="explain">取引プラットフォーム（mt4など）のスクショなどをアップしてください（3枚まで）</p>
   <div class="images-field clearfix">
     <div  class="field">
       <%= form.file_field :images, multiple: true, class: "file-input" %>

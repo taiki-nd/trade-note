@@ -4,10 +4,14 @@
   <div class="record_content">
     <div class="left_content">
       <h2>取引画像</h2>
-      <% if @record.image.attached? %>
-        <%= link_to image_tag(@record.image, class:"recorded_img_show") %>
+      <% if @record.images.attached? %>
+        <div class="record_images">
+          <% @record.images.each do |image| %>
+            <%= image_tag image, class: "recorded_img_show" %>
+          <%end%>
+        </div>
       <% else %>
-        <%= link_to image_tag("no_image.jpg", class:"recorded_img_show") %>
+        <%= image_tag "no_image.jpg", class: "recorded_img_show" %>
       <% end %>
     </div>
     <div class="right_content">

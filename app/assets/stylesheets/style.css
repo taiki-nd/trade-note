@@ -57,6 +57,15 @@ h4{
   font-weight: bold;
 }
 
+.highlight{
+  width: fit-content;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: -webkit-linear-gradient(0deg, #ff0000, #777777, #5eff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .link_word{
   color: #777777;
 }

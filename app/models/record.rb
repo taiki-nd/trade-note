@@ -21,7 +21,7 @@ class Record < ApplicationRecord
   end
 
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_many :comment_records, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions

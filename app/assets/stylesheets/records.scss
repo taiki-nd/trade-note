@@ -44,7 +44,8 @@
   color: #777777;
 }
 
-.link_to_user:hover{
+.link_to_user:hover,
+.link_to_user:active{
   background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #55e900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

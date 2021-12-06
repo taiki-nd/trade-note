@@ -18,7 +18,8 @@ form input[type="submit"]{
   border-radius: 100vh;
 }
 
-form input[type="submit"]:hover{
+form input[type="submit"]:hover,
+form input[type="submit"]:active{
   border: 1px solid #ffffff;;
   background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
   background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);

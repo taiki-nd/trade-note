@@ -64,3 +64,4 @@ gem "chartkick"
 gem 'pry-rails'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'better_errors', '~> 2.9', '>= 2.9.1'

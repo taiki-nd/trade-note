@@ -11,10 +11,8 @@ class Record < ApplicationRecord
   end
 
   with_options numericality: { other_than: 1, message: 'を選択してください' } do
-    validates :hour_id
     validates :pair_id
     validates :ashi_id
-    validates :order_id
     validates :result_section_id
   end
 

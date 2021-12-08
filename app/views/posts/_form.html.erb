@@ -4,18 +4,10 @@
 <%= javascript_pack_tag 'posts' %>
 
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <p><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</p>
 
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+  <div class='error_message'>
+    <%= render 'shared/error_messages', model: form.object %>
+  </div>
   <div class="field">
     <p class="explain">タイトル<b class="indispensable">(必須)</b></p>
     <%= form.text_field :title %>
@@ -30,6 +22,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "post" %>
   </div>
 <% end %>

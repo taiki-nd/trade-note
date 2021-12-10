@@ -10,7 +10,7 @@ Rails.application.configure do
     domain: 'gmail.com',
     port:587,
     user_name: ENV["INFO_MAIL_AD_TRADENOTE"],
-    password: ENV["INFO_MAIL_AD_TRADENOTE"],
+    password: ENV["INFO_MAIL_PASS_TRADENOTE"],
     authentication: :login,
     openssl_verify_mode: 'none',
     enable_starttls_auto: true

@@ -70,7 +70,8 @@ h4{
   color: #777777;
 }
 
-.link_word:hover{
+.link_word:hover,
+.link_word:active{
   background: -webkit-linear-gradient(0deg, #fd3838, #dbdbdb, #55e900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

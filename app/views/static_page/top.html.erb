@@ -6,7 +6,7 @@
   <p class="catch">自分のトレードノートが世界最高の取引教材となるその時まで</p>
   <div class="space"></div>
 
-  <h2>みんなのトレードノートを見る！</h2>
+  <h2>みんなのトレードノートを見る</h2>
   <div class="grid">
     <% @records.each do |record| %>
       <%= render partial: "shared/index_record", locals: { record: record } %>
@@ -23,7 +23,7 @@
 
   <div class="space"></div>
 
-  <h2>最新記事を見る！</h2>
+  <h2>最新記事を見る</h2>
   <div class="post_grid">
     <% @posts.each do |post| %>
       <%= render partial: "shared/index_post", locals: { post: post } %>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, except: [:update]
-  before_action :move_to_show, only: [:edit, :update, :records]
+  before_action :move_to_show, only: [:edit, :records]
 
   def edit
     

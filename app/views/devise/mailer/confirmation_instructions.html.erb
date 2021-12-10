@@ -1,10 +1,10 @@
 <h1>メールアドレス認証</h1>
 
-<p><%= @nickname %> 様 (<%= @email %>)</p>
+<p><%= @email %> 様</p>
 
 <p>
-この度はTrade-Noteへご登録いただき、誠にありがとうございます。<br>
-本登録の完了をおこないますので、以下のリンクをクリックして手続きを完了して下さい。
+こちらTrade-Note運営です。<br>
+メールアドレス認証をおこないますので、以下のリンクをクリックして手続きを完了して下さい。
 </p>
 
 <p><%= link_to 'メールの認証をする', confirmation_url(@resource, confirmation_token: @token) %></p>

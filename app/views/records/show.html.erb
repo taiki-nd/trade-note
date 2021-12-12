@@ -1,3 +1,9 @@
+<% if @record.images.attached? %>
+  <% set_meta_tags title: "#{@record.pair.name}での取引詳細/#{@record.date}", description: @record.result_content, keywords: "トレードノート, #{@record.pair.name}, fx, 仮想通貨, 株", og:{image: image_url(url_for(@record.images[0]))}, twitter:{image: image_url(url_for(@record.images[0]))} %>
+<% else %>
+  <% set_meta_tags title: "#{@record.pair.name}での取引詳細/#{@record.date}", description: @record.result_content, keywords: "トレードノート, #{@record.pair.name}, fx, 仮想通貨, 株", og:{image: image_url('top.jpg')} %>
+<% end %>
+
 <div class="space"></div>
 <div class="content">
   <h1><%= @record.pair.name %>での取引の詳細</h1>

@@ -7,11 +7,11 @@ SitemapGenerator::Sitemap.default_host = "https://trade-note.jp"
   end
 
   add posts_path, changefreq: 'always'
-  Rule.find_each do |post|
+  Post.find_each do |post|
     add post_path(post), changefreq: 'always', lastmod: post.updated_at
   end
 
-  User.find_each do |user|, changefreq: 'always'
+  User.find_each do |user|
     add user_path(user), changefreq: 'always', lastmod: user.updated_at
   end
 

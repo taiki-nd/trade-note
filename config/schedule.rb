@@ -18,3 +18,9 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+if @environment.to_sym == :production
+  every 1.day, at: '4:00 am' do
+    rake 'sitemap:refresh'
+  end
+end

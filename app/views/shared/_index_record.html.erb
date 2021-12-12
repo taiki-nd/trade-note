@@ -15,16 +15,5 @@
         損益判定なし
       <% end %>
     </p>
-    <div class="record_small_info">
-      <div class="likes_buttons_<%= record.id %>">
-        <%#<%= render partial: 'like_records/like', locals: { record: record } %>
-      </div>
-      <div>
-        <%#<i class="fas fa-eye like-btn"></i>_<%= record.impressions_count %>
-      </div>
-      <p class="created_by">
-        by <%= link_to record.user.nickname, "/users/#{record.user.nickname}", {class: "link_to_user"} %>
-      </p>
-    </div>
   </div>
   

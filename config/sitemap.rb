@@ -1,5 +1,23 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.example.com"
+SitemapGenerator::Sitemap.default_host = "https://trade-note.jp"
+
+  add records_path, changefreq: 'always'
+  Record.find_each do |record|
+    add record_path(record), changefreq: 'always', lastmod: record.updated_at
+  end
+
+  add posts_path, changefreq: 'always'
+  Rule.find_each do |post|
+    add post_path(post), changefreq: 'always', lastmod: post.updated_at
+  end
+
+  User.find_each do |user|, changefreq: 'always'
+    add user_path(user), changefreq: 'always', lastmod: user.updated_at
+  end
+
+  add root_path, changefreq: 'monthly'
+  add privacy_policy_path, changefreq: 'monthly'
+  add disclaimer_path, changefreq: 'monthly'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.

@@ -1,3 +1,19 @@
+<% if @post.category.id == 2 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('fx.jpg')}, twitter:{image: image_url('fx.jpg')} %>
+<% elsif @post.category.id == 3 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('bit.jpg')}, twitter:{image: image_url('bit.jpg')} %>
+<% elsif @post.category.id == 4 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('stock.jpg')}, twitter:{image: image_url('stock.jpg')} %>
+<% elsif @post.category.id == 5 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('method.jpg')}, twitter:{image: image_url('method.jpg')} %>
+<% elsif @post.category.id == 6 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('note.jpg')}, twitter:{image: image_url('note.jpg')} %>
+<% elsif @post.category.id == 7 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('company.jpg')}, twitter:{image: image_url('company.jpg')} %>
+<% elsif @post.category.id == 8 %>
+  <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('other.jpg')}, twitter:{image: image_url('other.jpg')} %>
+<% end %>
+
 <div class="space"></div>
 
 <div class="content">

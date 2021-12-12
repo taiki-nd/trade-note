@@ -15,5 +15,6 @@
         損益判定なし
       <% end %>
     </p>
+    <p class="created_by">by <%= link_to record.user.nickname, "/users/#{record.user.nickname}", {class: "link_word"} %></p>
   </div>
   

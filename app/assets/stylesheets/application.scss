@@ -25,6 +25,7 @@
   left: 0;
   z-index: 10;
   display: flex;
+  background: -webkit-linear-gradient(45deg, #ffffff, #ffffff, #ff0000, #ffffff, #5eff00, #ffffff);
 }
 
 .heading{
@@ -38,7 +39,7 @@
 
 .title_logo{
   display: block;
-  margin: auto;
+  margin: 0 25px 0 0;
   height: 25px;
 }
 
@@ -48,9 +49,6 @@
   font-size: 20px;
   letter-spacing: 5px;
   font-weight: bold;
-  background: -webkit-linear-gradient(20deg, #ff0000, #777777, #5eff00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .current_user{

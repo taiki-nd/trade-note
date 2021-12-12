@@ -9,8 +9,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => ENV["INFO_MAIL_AD_ENV"],
-    :password => ENV["INFO_MAIL_PASS_ENV"],
+    :user_name => ENV["INFO_MAIL_AD_TRADENOTE"],
+    :password => ENV["INFO_MAIL_PASS_TRADENOTE"],
     :authentication => 'login'
   }
 

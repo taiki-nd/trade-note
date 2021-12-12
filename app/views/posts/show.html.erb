@@ -14,7 +14,7 @@
   <% set_meta_tags title: @post.title, description: @post.content, keywords: "#{@post.category.name}, 個別キーワード2, 個別キーワード3", og:{image: image_url('other.jpg')}, twitter:{image: image_url('other.jpg')} %>
 <% end %>
 
-<div class="space"></div>
+<% breadcrumb :post_show %>
 
 <div class="content">
 <div class="space"></div>

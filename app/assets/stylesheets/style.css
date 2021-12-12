@@ -110,6 +110,15 @@ h4{
   height: 25px;
 }
 
+.breadcrumbs{
+  display: block;
+  margin-top: 55px;
+  margin-left: 10px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  color: #656869;
+}
+
 @media screen and (max-width: 767px){
 	
 	.btn{

@@ -14,6 +14,7 @@
   </head>
 
   <body>
+  <%= breadcrumbs separator: " &rsaquo; " %> 
   <% if content_for?(:body_attributes) %>
     <%= yield(:body_attributes) %>
   <% end %>

@@ -1,4 +1,6 @@
-<div class="space"></div>
+
+<% breadcrumb :record_search %>
+
 <div class="content">
   <h1>トレードノートの検索結果</h1>
   <div class="container">
@@ -23,9 +25,15 @@
       <%= f.collection_select :result_section_id_eq,ResultSection.all,:id,:name,include_blank: '理由で検索' %>
       <%= f.submit '検索' %>
     <% end %>
-    <%= link_to "一覧に戻る", records_path, class: "link_word" %>
+
+        <%= link_to "一覧に戻る", records_path, class: "link_word" %>
+
   </div>
-  <%= render partial: "shared/index_record", locals: { records: @results } %>
+  <div class="grid">
+    <% @results.each do |record| %>
+      <%= render partial: "shared/index_record", locals: { record: record } %>
+    <% end %>
+  </div>
 </div>
   
 <div class="space"></div>

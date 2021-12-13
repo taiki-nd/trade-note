@@ -34,6 +34,9 @@
     <%= form.text_area :content, { id: "markdown-editar"} %>
   </div>
 
+  <p class="explain">ステータスの選択をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
+
   <div class="actions">
     <%= form.submit "post" %>
   </div>

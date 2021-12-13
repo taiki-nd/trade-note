@@ -35,7 +35,7 @@ fxtradersを実際に利用する中で、いくつかの改善点があると�
 * 勝率とプロフィットファクター
 [![Image from Gyazo](https://i.gyazo.com/2dcea2c36d6b1d6abd26040ac066374a.png)](https://gyazo.com/2dcea2c36d6b1d6abd26040ac066374a)
 * 取引傾向と改善点の分析
-[![Image from Gyazo](https://i.gyazo.com/2dcea2c36d6b1d6abd26040ac066374a.png)](https://gyazo.com/2dcea2c36d6b1d6abd26040ac066374a)
+[![Image from Gyazo](https://i.gyazo.com/20e34b248747036e16c5070ae2025609.png)](https://gyazo.com/20e34b248747036e16c5070ae2025609)
 
 # 利用方法
 1. 新規登録
@@ -69,7 +69,7 @@ fxtradersを実際に利用する中で、いくつかの改善点があると�
 * グラフ表示（gem, chartkick）
 [![Image from Gyazo](https://i.gyazo.com/fd6b39337d26c7f5c5bb91084a3cc233.png)](https://gyazo.com/fd6b39337d26c7f5c5bb91084a3cc233)
 [![Image from Gyazo](https://i.gyazo.com/2dcea2c36d6b1d6abd26040ac066374a.png)](https://gyazo.com/2dcea2c36d6b1d6abd26040ac066374a)
-[![Image from Gyazo](https://i.gyazo.com/2dcea2c36d6b1d6abd26040ac066374a.png)](https://gyazo.com/2dcea2c36d6b1d6abd26040ac066374a)
+[![Image from Gyazo](https://i.gyazo.com/20e34b248747036e16c5070ae2025609.png)](https://gyazo.com/20e34b248747036e16c5070ae2025609)
 * メール認証機能 (google workspace)
 [![Image from Gyazo](https://i.gyazo.com/b3f9f9e1c0aaf43cc5e9eab3cc1330c8.png)](https://gyazo.com/b3f9f9e1c0aaf43cc5e9eab3cc1330c8)
 * 管理者機能

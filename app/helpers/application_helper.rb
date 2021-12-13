@@ -2,8 +2,8 @@ module ApplicationHelper
 
   def default_meta_tags
     {
-      site: 'Trade-Note',
-      title: 'トレードノート',
+      site: 'トレードノート',
+      title: 'トレードノートを作って分析して自分の取引をグレードアップ！',
       reverse: true,
       charset: 'utf-8',
       description: 'トレードノートを作って自分の取引を分析することができるwebサイト！資産推移、勝率、プロフィットファクター、取引傾向を分析することができます。記事投稿も可能でアフィリエイトリンクを貼り付けて広告収入も得られます！',

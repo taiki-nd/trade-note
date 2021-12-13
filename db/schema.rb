@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2021_12_13_024604) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status_id", default: 0
+    t.integer "status_id", default: 1
     t.string "keyword1"
     t.string "keyword2"
     t.string "keyword3"

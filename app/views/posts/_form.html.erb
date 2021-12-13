@@ -13,6 +13,18 @@
     <%= form.text_field :title %>
   </div>
 
+  <div class="field">
+    <p class="explain">キーワード<b class="indispensable">(必須)</b></p>
+    <%= form.text_field :keyword1 %>
+    <%= form.text_field :keyword2 %>
+    <%= form.text_field :keyword3 %>
+  </div>
+
+  <div class="field">
+    <p class="explain">ディスクリプション<b class="indispensable">(必須)</b></p>
+    <%= form.text_field :description %>
+  </div>
+
   <p class="explain">カテゴリーの選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
 

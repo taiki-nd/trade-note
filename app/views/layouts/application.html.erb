@@ -51,6 +51,7 @@
           <li class="navi"><%= link_to '新規TradeNoteの作成', new_record_path %></li>
           <div data-turbolinks="false">
           <li class="navi"><%= link_to '新規記事の作成', new_post_path %></li>
+          <li class="navi"><%= link_to '記事の書き方', "https://trade-note.jp/posts/2" %></li>
           </div>
         <% else %>
           <li class="navi"><%= link_to 'ログイン', new_user_session_path %></li>
@@ -147,7 +148,7 @@
           <li>投資関連のアフィリエイトリンクの貼り付けができる</li>
           <li>記事を書くことで考え方を整理することができる</li>
         </ul>
-        <b>注意: 記事作成、アフィリエイトリンクの貼り付けにはルールが設けられています。詳しくは<%= link_to "こちら", "/", class: "link_word" %>をご覧ください。</b>
+        <b>注意: 記事作成、アフィリエイトリンクの貼り付けにはルールが設けられています。詳しくは<%= link_to "こちら", "https://trade-note.jp/posts/2", class: "link_word" %>をご覧ください。</b>
 
       </div>
 

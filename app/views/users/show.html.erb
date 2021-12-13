@@ -198,11 +198,9 @@
     <div class="container">
       <h2><%= @user.nickname %>さんの専用エリア</h2>
       <div class="btns">
-        
-          <%= link_to 'ユーザー情報の編集', users_edit_path(current_user.nickname), class: 'btn' %>
-        
-          <%= link_to "取引履歴を一覧形式で見る", users_records_path, class: "btn" %>
-        
+        <%= link_to 'ユーザー情報の編集', users_edit_path(current_user.nickname), class: 'btn' %>
+        <%= link_to "取引履歴を一覧形式で見る", users_records_path, class: "btn" %>
+        <%= link_to "下書き記事をみる", users_post_draft_path, class: "btn" %>
       </div>
     </div>
 

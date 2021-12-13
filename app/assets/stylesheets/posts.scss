@@ -47,6 +47,11 @@
   font-size: 1.2rem;
 }
 
+
+.markdown_content pre{
+  overflow: auto;
+}
+
 @media screen and (max-width: 767px){
 	
 	.post_grid{

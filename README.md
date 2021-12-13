@@ -96,6 +96,7 @@ fxtradersを実際に利用する中で、いくつかの改善点があると�
 * 日本語対応（gem, rails-i18n)
 [![Image from Gyazo](https://i.gyazo.com/881e8d0bb7f407091930854ea1537a0d.png)](https://gyazo.com/881e8d0bb7f407091930854ea1537a0d)
 * 問い合わせ（ライン公式, font awesome）
+[![Image from Gyazo](https://i.gyazo.com/9b62f008a3debed18c9cb61767ee905a.png)](https://gyazo.com/9b62f008a3debed18c9cb61767ee905a)
 * ハンバーガーメニュー
 * レスポンシブ対応
 

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   get '/users/:nickname/post' => 'users#post', as: :users_post
+  get '/users/:nickname/post_draft' => 'users#post_draft', as: :users_post_draft
   get '/users/:nickname/records' => 'users#records', as: :users_records
   get '/users/:nickname/followings' => 'relationships#followings', as: 'followings'
   get '/users/:nickname/followers' => 'relationships#followers', as: 'followers' 

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :set_user, except: [:update]
-  before_action :move_to_show, only: [:edit, :records]
+  before_action :move_to_show, only: [:edit, :records, :post_draft]
 
   def edit
     
@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @records = Record.where(user_id: @user.id).includes(:user).includes(:user).order(date: "DESC").limit(4)
-    @posts = Post.where(user_id: @user.id).includes(:user).includes(:user).order("created_at DESC").limit(4)
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").limit(4)
+    @posts = Post.where(user_id: @user.id).includes(:user).where(status_id: 2).order("created_at DESC").limit(4)
     @users_records = Record.where(user_id: @user.id)
     
     if @users_records.count > 0
@@ -109,7 +109,11 @@ class UsersController < ApplicationController
   end
 
   def post
-    @posts = Post.where(user_id: @user.id).includes(:user).order("created_at DESC").page(params[:page]).per(20)
+    @posts = Post.where(user_id: @user.id).includes(:user).where(status_id: 2).order("created_at DESC").page(params[:page]).per(20)
+  end
+
+  def post_draft
+    @posts = Post.where(user_id: @user.id).includes(:user).where(status_id: 1).order("created_at DESC").page(params[:page]).per(20)
   end
 
   def records

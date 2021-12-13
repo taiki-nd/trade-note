@@ -13,6 +13,18 @@
     <%= form.text_field :title %>
   </div>
 
+  <div class="field">
+    <p class="explain">キーワード<b class="indispensable">(必須)</b></p>
+    <%= form.text_field :keyword1 %>
+    <%= form.text_field :keyword2 %>
+    <%= form.text_field :keyword3 %>
+  </div>
+
+  <div class="field">
+    <p class="explain">ディスクリプション<b class="indispensable">(必須)</b></p>
+    <%= form.text_field :description %>
+  </div>
+
   <p class="explain">カテゴリーの選択をしてください<b class="indispensable">(必須)</b></p>
   <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
 
@@ -21,6 +33,9 @@
     <p class="explain">記事の書き方は<%= link_to "こちら", "https://trade-note.jp/posts/2", class: "link_word" %>に記載があります。</p>
     <%= form.text_area :content, { id: "markdown-editar"} %>
   </div>
+
+  <p class="explain">ステータスの選択をしてください<b class="indispensable">(必須)</b></p>
+  <%= form.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"hour"})%>
 
   <div class="actions">
     <%= form.submit "post" %>

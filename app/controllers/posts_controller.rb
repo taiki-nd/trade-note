@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(12)
+    @posts = Post.includes(:user).where(status_id: 2).order("created_at DESC").page(params[:page]).per(12)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -68,7 +68,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:content, :title, :category_id).merge(user_id: current_user.id)
+      params.require(:post).permit(:content, :title, :category_id, :status_id, :keyword1, :keyword2, :keyword3, :description).merge(user_id: current_user.id)
     end
 
     def move_to_index

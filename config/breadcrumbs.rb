@@ -34,6 +34,11 @@ end
     parent :user_show, user
   end
 
+  crumb :user_posts_draft do |user|
+    link "ユーザー下書き記事", users_post_draft_path
+    parent :user_show, user
+  end
+
   crumb :user_edit do |user|
     link "登録情報の編集", users_edit_path
     parent :user_show, user

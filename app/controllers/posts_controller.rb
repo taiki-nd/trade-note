@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(12)
+    @posts = Post.includes(:user).where(status_id: 2).order("created_at DESC").page(params[:page]).per(12)
   end
 
   # GET /posts/1 or /posts/1.json

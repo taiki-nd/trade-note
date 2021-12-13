@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @records = Record.where(user_id: @user.id).includes(:user).includes(:user).order(date: "DESC").limit(4)
-    @posts = Post.where(user_id: @user.id).includes(:user).includes(:user).order("created_at DESC").limit(4)
+    @posts = Post.where(user_id: @user.id).includes(:user).where(status_id: 2).order("created_at DESC").limit(4)
     @users_records = Record.where(user_id: @user.id)
     
     if @users_records.count > 0

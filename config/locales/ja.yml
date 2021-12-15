@@ -227,7 +227,10 @@ ja:
         title: タイトル
         content: コンテンツ
         category_id: カテゴリー
-
+        keyword1: キーワード
+        keyword2: キーワード
+        keyword3: キーワード
+        description: ディスクリプション
   errors:
     messages:
       record_invalid: "バリデーションに失敗しました: %{errors}"

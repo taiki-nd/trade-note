@@ -25,16 +25,25 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("ニックネームを入力してください")
       end
       it '重複したnicknameが存在する場合登録できない' do
+        @user.confirmed_at = Time.zone.now
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.nickname = @user.nickname
         another_user.valid?
-        expect(another_user.errors.full_messages).to include('Email has already been taken')
+        expect(another_user.errors.full_messages).to include('ニックネームはすでに存在します')
       end
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Eメールを入力してください")
+      end
+      it '重複したemailが存在する場合登録できない' do
+        @user.confirmed_at = Time.zone.now
+        @user.save
+        another_user = FactoryBot.build(:user)
+        another_user.email = @user.email
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
       end
       it 'passwordが空では登録できない' do
         @user.password = ''

@@ -15,7 +15,7 @@ https://trade-note.jp
 
 ## 概要
 
-fxtraders(https://fxtraders.jp)のリニューアルバージョンになります。
+[fxtraders](https://fxtraders.jp)【[github](https://github.com/taiki-nd/fx-traders)】のリニューアルバージョンになります。
 取引記録の投稿をもとに分析し現状を把握できるアプリケーションで、記事の投稿することも可能です。simpleMDEの導入により。記事作成が柔軟になっているので。アフィリエイトリンクを貼り付け収益化することも可能です。
 
 ## リニューアル理由

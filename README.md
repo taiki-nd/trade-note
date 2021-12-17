@@ -65,6 +65,8 @@ fxtradersを実際に利用する中で、いくつかの改善点があると�
 * 削除（ajax）
 
 ## ユーザー関連
+* ユーザーネームリンク
+[![Image from Gyazo](https://i.gyazo.com/0be776f574db6c0d186fcd254375ef24.png)](https://gyazo.com/0be776f574db6c0d186fcd254375ef24)
 * フォロー機能
 * グラフ表示（gem, chartkick）
 [![Image from Gyazo](https://i.gyazo.com/fd6b39337d26c7f5c5bb91084a3cc233.png)](https://gyazo.com/fd6b39337d26c7f5c5bb91084a3cc233)

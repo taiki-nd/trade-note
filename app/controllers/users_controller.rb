@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").limit(4)
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").order(hour_id: "DESC").limit(4)
     @posts = Post.where(user_id: @user.id).includes(:user).where(status_id: 2).order("created_at DESC").limit(4)
     @users_records = Record.where(user_id: @user.id)
     
@@ -105,7 +105,7 @@ class UsersController < ApplicationController
   end
 
   def record
-    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").page(params[:page]).per(16)
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").order(hour_id: "DESC").page(params[:page]).per(16)
   end
 
   def post
@@ -117,7 +117,7 @@ class UsersController < ApplicationController
   end
 
   def records
-    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").page(params[:page]).per(50)
+    @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").order(hour_id: "DESC").order("created_at DESC").page(params[:page]).per(50)
   end
 
   private

@@ -5,7 +5,7 @@
   <table>
     <% @records.each do |record| %>
     <tr>
-      <th class="date"><%= record.date %></th>
+      <th class="date"><%= record.date %>(<%= record.hour.name %>時)</th>
       <td class="records_content"><%= record.pair.name %></td>
       <td class="records_content"><%= record.result_section.name %></td>
     </tr>

@@ -7,7 +7,7 @@ class RecordsController < ApplicationController
   before_action :set_q, only: [:index, :search]
 
   def index
-    @records = Record.includes(:user).order(date: "DESC").page(params[:page]).per(16)
+    @records = Record.includes(:user).order(date: "DESC").order(hour_id: "DESC").page(params[:page]).per(16)
   end
 
   def new

@@ -17,7 +17,7 @@
     </div>
     <div class="space"></div>
       <ul>
-        <li>TradeNote数: <%= link_to @user.records.count, users_post_path, class: "link_word" %></li>
+        <li>TradeNote数: <%= link_to @user.records.count, users_record_path, class: "link_word" %></li>
         <li>投稿記事数: <%= link_to @user.posts.count, users_post_path, class: "link_word" %></li>
       </ul>
   </div>

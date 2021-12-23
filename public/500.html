@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
@@ -32,8 +32,12 @@
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
+    font-size: 1.7rem;
+    line-height: 1.5em;
+  }
+
+  .rails-default-error-page h2 {
+    font-size: 1.5rem;
     line-height: 1.5em;
   }
 
@@ -55,12 +59,14 @@
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
+  <!-- This file lives in public/404.html -->
   <div class="dialog">
-    <h1>TradeNote</h1>
-    <p>エラーコード：500</p>
-    <h2>現在トラブルの調査中です。</h2>
-    <p>しばらくしても元に戻らない場合は運営にご連絡いただきますようご協力をお願いいたします。</p>
+    <div>
+      <h1>TradeNote</h1>
+      <p>エラーコード：500</p>
+      <h2>現在トラブルの調査中です。</h2>
+      <p>しばらくしても元に戻らない場合は運営にご連絡いただきますようご協力をお願いいたします。</p>
+    </div>
   </div>
 </body>
 </html>

@@ -3,10 +3,22 @@ import PropTypes from "prop-types"
 import styled from 'styled-components'
 
 class Like extends React.Component {
+
+  getInitialState () {
+    return {
+        counts: 0,         //いいねの合計数
+        is_liked: false    //いいねされているかどうかの状態
+    }
+  }
+
+  LikeAjax () {
+    console.log("clicked")
+  } 
+
   render () {
     return (
       <>
-      <LikeBtn>
+      <LikeBtn onClick={this.LikeAjax}>
         NiceTrade!
       </LikeBtn>
       </>

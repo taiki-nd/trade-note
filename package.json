@@ -7,6 +7,7 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
+    "axios": "^0.24.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "chart.js": "^3.6.0",
     "chartkick": "^4.1.1",
@@ -15,8 +16,10 @@
     "prop-types": "^15.8.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-toastify": "^8.1.0",
     "react_ujs": "^2.6.1",
     "simplemde": "^1.11.2",
+    "styled-components": "^5.3.3",
     "turbolinks": "^5.2.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"

@@ -125,6 +125,11 @@
 
   <div class="container">
     <h2>コメント</h2>
+
+    <div>
+      <%= react_component "Like" %>
+    </div>
+
     <% if user_signed_in? %>
       <%= form_with model: [@record, @comment_record],url: record_comment_records_path(@record), local: false do |form| %>
         <%= form.text_area :comment, placeholder: "コメントする", rows: "2" %>

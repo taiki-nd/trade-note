@@ -23,4 +23,12 @@ const LikeBtn = styled.div`
   padding: 0.5rem 1rem;
   border: 1px solid #000000;
   border-radius: 100vh;
+  &:hover {
+    background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
+    background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  }
+  &:active {
+    background-image: -webkit-linear-gradient(20deg, #fd3838, #dbdbdb, #87ff41);
+    background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  }
 `

@@ -3,19 +3,19 @@ SitemapGenerator::Sitemap.default_host = "https://trade-note.jp"
 
   add records_path, changefreq: 'always'
   Record.find_each do |record|
-    add record_path(record), changefreq: 'always', lastmod: record.updated_at
+    add record_path(record), changefreq: 'daily', lastmod: record.updated_at
   end
 
   add posts_path, changefreq: 'always'
   Post.find_each do |post|
-    add post_path(post), changefreq: 'always', lastmod: post.updated_at
+    add post_path(post), changefreq: 'daily', lastmod: post.updated_at
   end
 
   User.find_each do |user|
-    add user_path(user), changefreq: 'always', lastmod: user.updated_at
+    add user_path(user), changefreq: 'daily', lastmod: user.updated_at
   end
 
-  add root_path, changefreq: 'monthly'
+  add root_path, changefreq: 'always'
   add privacy_policy_path, changefreq: 'monthly'
   add disclaimer_path, changefreq: 'monthly'
 

@@ -83,3 +83,4 @@ gem 'gretel'
 gem 'sitemap_generator'
 gem 'whenever'
 gem "aws-sdk-s3", require: false
+gem 'react-rails'

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'static_page#top'
   get 'privacy_policy', to: 'static_page#privacy'
   get 'disclaimer', to: 'static_page#disclaimer'
+  get 'LP', to: 'static_page#landingpage'
 
   devise_for :users
 

@@ -521,6 +521,82 @@ end
 
 5.times do
   Record.create!(
+    date: "2022-01-01",
+    hour_id: rand(2..23),
+    pair_id: 51,
+    ashi_id: rand(2..5),
+    order_id: rand(2..5),
+    line_main_id: rand(2..5),
+    line_sub_id: rand(2..5),
+    indi_main_id: rand(2..5),
+    indi_sub_id: rand(2..5),
+    price_renge: rand(-100..150),
+    entry_basis: "text text",
+    result_content: "text text",
+    result_section_id: rand(2..19),
+    user_id: 1
+  )
+end
+
+5.times do
+  Record.create!(
+    date: "2022-01-02",
+    hour_id: rand(2..23),
+    pair_id: 14,
+    ashi_id: rand(2..5),
+    order_id: rand(2..5),
+    line_main_id: rand(2..5),
+    line_sub_id: rand(2..5),
+    indi_main_id: rand(2..5),
+    indi_sub_id: rand(2..5),
+    price_renge: rand(-100..150),
+    entry_basis: "text text",
+    result_content: "text text",
+    result_section_id: rand(2..19),
+    user_id: 1
+  )
+end
+
+5.times do
+  Record.create!(
+    date: "2022-01-04",
+    hour_id: rand(2..23),
+    pair_id: 22,
+    ashi_id: rand(2..5),
+    order_id: rand(2..5),
+    line_main_id: rand(2..5),
+    line_sub_id: rand(2..5),
+    indi_main_id: rand(2..5),
+    indi_sub_id: rand(2..5),
+    price_renge: rand(-100..150),
+    entry_basis: "text text",
+    result_content: "text text",
+    result_section_id: rand(2..19),
+    user_id: 1
+  )
+end
+
+5.times do
+  Record.create!(
+    date: "2022-01-06",
+    hour_id: rand(2..23),
+    pair_id: 43,
+    ashi_id: rand(2..5),
+    order_id: rand(2..5),
+    line_main_id: rand(2..5),
+    line_sub_id: rand(2..5),
+    indi_main_id: rand(2..5),
+    indi_sub_id: rand(2..5),
+    price_renge: rand(-100..150),
+    entry_basis: "text text",
+    result_content: "text text",
+    result_section_id: rand(2..19),
+    user_id: 2
+  )
+end
+
+5.times do
+  Record.create!(
     date: "2021-11-17",
     hour_id: rand(2..23),
     pair_id: 51,

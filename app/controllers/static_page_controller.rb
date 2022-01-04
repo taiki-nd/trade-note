@@ -4,6 +4,9 @@ class StaticPageController < ApplicationController
     @posts = Post.includes(:user).where(status_id: 2).order("created_at DESC").limit(4)
   end
 
+  def landingpage
+  end
+
   def privacy
   end
 

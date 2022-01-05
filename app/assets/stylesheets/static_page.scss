@@ -161,6 +161,10 @@ li:after {
 		flex-direction: column;
 	}
 
+	.lp_top{
+		height: fit-content;
+	}
+
 	.lp_h1{
 		font-size: 1.5rem;
 		font-weight: bold;
@@ -173,8 +177,10 @@ li:after {
 
 	.lp_imgs{
 		width: 90%;
+		height: fit-content;
 		justify-content: center;
 		flex-direction: column;
+		padding-bottom: 50px;
 	}
 
 	.lp_content{

@@ -110,7 +110,7 @@ li:after {
 
 .lp_img{
 	display: block;
-	width: 100%;
+	width: 95%;
 	margin: 0 auto;
 	border: 10px solid #000000;
 	border-radius: 10px;
@@ -159,6 +159,26 @@ li:after {
 	
 	.btns{
 		flex-direction: column;
+	}
+
+	.lp_h1{
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+
+	.lp_none{
+		display: none;
+		font-size: 1px;
+	}
+
+	.lp_imgs{
+		width: 90%;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.lp_content{
+		width: 100%;
 	}
 
 	}

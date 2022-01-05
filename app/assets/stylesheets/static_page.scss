@@ -171,14 +171,18 @@ li:after {
 		font-weight: bold;
 	}
 
+	.lp_h2{
+		font-size: 1.2rem;
+	}
+
 	.lp_none{
 		display: none;
-		font-size: 1px;
+		font-size: 0px;
 	}
 
 	.lp_imgs{
 		width: 90%;
-		height: fit-content;
+		height: 30vh;
 		justify-content: center;
 		flex-direction: column;
 		padding-bottom: 50px;

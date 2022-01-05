@@ -61,6 +61,53 @@ li:after {
 	transform: rotate(60deg);
 }
 
+.lp_top{
+	height: 100vh;
+  background-image: -webkit-linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  background-image: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+}
+
+.lp_imgs{
+	width: 60%;
+	height: 80vh;
+	margin: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.lp_none{
+	opacity: 0;
+}
+
+.lp_graph_img{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.fa-chevron-right{
+	font-size: 50px;
+	margin: 0 50px;
+	color: #fd3838;
+}
+
+
+.lp_h1{
+	font-size: 3rem;
+	text-align: center;
+	height: 10vh;
+}
+
+.lp_content{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.lp_space{
+	height: 5vh;
+}
+
 @media screen and (max-width: 767px){
 
 	.catch{

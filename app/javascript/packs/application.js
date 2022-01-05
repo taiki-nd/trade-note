@@ -9,6 +9,8 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
 import "packs/menu.js"
+import "packs/change.js"
+import "packs/fadein.js"
 import "chartkick/chart.js"
 
 Rails.start()

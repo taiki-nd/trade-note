@@ -85,12 +85,14 @@
   </header>
 
     <%= yield %>
-  
-  <%= render partial: "shared/ad_xm" %>
+    
+  <% unless current_page?("/LP") %>
+    <%= render partial: "shared/ad_xm" %>
+  <% end %>
 
   <div class="space"></div>
 
-  <% unless user_signed_in? %>
+  <% unless user_signed_in? || current_page?("/LP") %>
     <div class="content">
       <h1>トレードノートを作ろう！</h1>
 

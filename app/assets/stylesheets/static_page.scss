@@ -116,6 +116,23 @@ li:after {
 	border-radius: 10px;
 }
 
+.cation{
+	font-size: 0.7rem;
+	color: #656869;
+	text-align: right;
+}
+
+.lp_catch{
+  width: fit-content;
+  width: -moz-fit-content;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(20deg, #f86262, #dbdbdb, #b9ff90);
+  background-image: linear-gradient(70deg, #f86262, #dbdbdb, #b9ff90);
+}
+
 .fadein{
   opacity: 0;
   transform: translateY(100px);

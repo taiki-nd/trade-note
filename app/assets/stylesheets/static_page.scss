@@ -108,6 +108,32 @@ li:after {
 	height: 5vh;
 }
 
+.lp_img{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	border: 10px solid #000000;
+	border-radius: 10px;
+}
+
+.fadein{
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.5s;
+}
+
+.faderight{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1.5s;
+}
+
+.fadeleft{
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.5s;
+}
+
 @media screen and (max-width: 767px){
 
 	.catch{

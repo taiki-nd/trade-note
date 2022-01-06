@@ -2,6 +2,29 @@
 
 <div class="content">
   <h1><%= @user.nickname %>さんの取引履歴</h1>
+  <div class="container">
+    <%= search_form_for @q, url: users_search_path do |f| %>
+      <div class="search_date">
+        <div>
+          <%= f.date_field :created_at_gteq %>
+        </div>
+        <div>
+          <p>　　〜　　</p>
+        </div>
+        <div>
+          <%= f.date_field :created_at_lteq_end_of_day %>
+        </div>
+      </div>
+      <%= f.collection_select :pair_id_eq,Pair.all,:id,:name,include_blank: '通貨ペアで検索' %>
+      <%= f.collection_select :hour_id_eq,Hour.all,:id,:name,include_blank: '取引時間帯で検索' %>
+      <%= f.collection_select :ashi_id_eq,Ashi.all,:id,:name,include_blank: '時間足で検索' %>
+      <%= f.collection_select :indi_main_id_eq,IndiMain.all,:id,:name,include_blank: 'インジケーターで検索' %>
+      <%= f.collection_select :line_main_id_eq,LineMain.all,:id,:name,include_blank: 'ラインで検索' %>
+      <%= f.collection_select :kind_id_eq,Kind.all,:id,:name,include_blank: 'トレード種別で検索' %>
+      <%= f.collection_select :result_section_id_eq,ResultSection.all,:id,:name,include_blank: '理由で検索' %>
+      <%= f.submit '検索' %>
+    <% end %>
+  </div>
   <table>
     <% @records.each do |record| %>
     <tr>

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
   before_action :set_user, except: [:update]
-  before_action :move_to_show, only: [:edit, :records, :post_draft]
+  before_action :move_to_show, only: [:edit, :records, :post_draft, :search]
+  before_action :set_q, only: [:records, :search]
 
   def edit
     
@@ -120,6 +121,10 @@ class UsersController < ApplicationController
     @records = Record.where(user_id: @user.id).includes(:user).order(date: "DESC").order(hour_id: "DESC").order("created_at DESC").page(params[:page]).per(50)
   end
 
+  def search
+    @results = @q.result.where(user_id: @user.id).includes(:user).order(date: "DESC").order("created_at DESC").page(params[:page]).per(50)
+  end
+
   private
 
   def user_params
@@ -134,6 +139,10 @@ class UsersController < ApplicationController
     unless user_signed_in? && current_user.nickname == @user.nickname
       redirect_to action: :show
     end
+  end
+
+  def set_q
+    @q = Record.ransack(params[:q])
   end
 
 end

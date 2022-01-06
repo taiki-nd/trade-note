@@ -74,25 +74,19 @@ li:after {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-}
-
-.lp_none{
-	opacity: 0;
+	position: relative;
 }
 
 .lp_graph_img{
 	display: block;
 	width: 100%;
 	margin: 0 auto;
+	opacity: 0;
+	position: absolute;
+  top: 10vh;
+  left: 0;
+  opacity: 0;
 }
-
-.fa-chevron-right{
-	font-size: 50px;
-	margin: 0 50px;
-	color: #fd3838;
-	cursor: pointer;
-}
-
 
 .lp_h1{
 	font-size: 3rem;
@@ -115,6 +109,11 @@ li:after {
 	margin: 0 auto;
 	border: 10px solid #000000;
 	border-radius: 10px;
+}
+
+.current-img{
+  opacity: 1;
+  z-index: 20;
 }
 
 .cation{
@@ -175,17 +174,16 @@ li:after {
 		font-size: 1.2rem;
 	}
 
-	.lp_none{
-		display: none;
-		font-size: 0px;
-	}
-
 	.lp_imgs{
 		width: 90%;
 		height: 30vh;
 		justify-content: center;
 		flex-direction: column;
 		padding-bottom: 50px;
+	}
+
+	.lp_graph_img{
+		top: 0;
 	}
 
 	.lp_content{

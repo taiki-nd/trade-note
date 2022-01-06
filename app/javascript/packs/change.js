@@ -1,19 +1,18 @@
 $(function(){
-  const imgs = ['graph.png', 'pf.png', 'result.png'];  // 画像ファイル名
-  let index = 0;  // インデックス番号
-
   // 初期画像の表示
-  $('.lp_graph_img').attr('src', '/assets/' + imgs[index]);
+  let index = 0;
+  $('.lp_graph_img').eq(index).addClass('current-img');
   
-  // ボタンクリックイベント
-  $('#changeBtn').click(function(){
-    // 最後の画像判定
-    if(index == imgs.length - 1){
+  setInterval(function(){
+    // 非表示
+    $('.lp_graph_img').eq(index).removeClass('current-img');
+    // 画像の最後判定
+    if(index == $('.lp_graph_img').length - 1){
       index = 0;
     }else{
       index++;
     }
-    // 画像の切り替え
-    $('.lp_graph_img').attr('src', '/assets/' + imgs[index]);
-  });
+    // 表示
+    $('.lp_graph_img').eq(index).addClass('current-img');
+  }, 2000);
 });

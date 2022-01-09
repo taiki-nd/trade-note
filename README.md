@@ -216,7 +216,7 @@ fxtradersを実際に利用する中で、いくつかの改善点があると�
 
 [![Image from Gyazo](https://i.gyazo.com/8e28165b64a2e89b1f3127d7667abfd3.png)](https://gyazo.com/8e28165b64a2e89b1f3127d7667abfd3)
 
-* google広告の利用について
+# google広告の利用について
 google広告を利用を開始しました。
 [![Image from Gyazo](https://i.gyazo.com/f6d0ce9c73d51c4ef0748dc6d1cb9f79.png)](https://gyazo.com/f6d0ce9c73d51c4ef0748dc6d1cb9f79)
 

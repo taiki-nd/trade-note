@@ -18,6 +18,7 @@ SitemapGenerator::Sitemap.default_host = "https://trade-note.jp"
   add root_path, changefreq: 'always'
   add privacy_policy_path, changefreq: 'monthly'
   add disclaimer_path, changefreq: 'monthly'
+  add lp_path, changefreq: 'monthly'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.

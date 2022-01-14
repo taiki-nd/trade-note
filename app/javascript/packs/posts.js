@@ -9,6 +9,7 @@ window.onload = function () {
   // textareaをMarkdownエディタにする
   const simplemde = new SimpleMDE({
     element: document.getElementById("markdown-editar"),
+    spellChecker: false
   });
   // エディタに画像がドラッグ&ドロップされた際の処理
   inlineAttachment.editors.codemirror4.attach(simplemde.codemirror, {

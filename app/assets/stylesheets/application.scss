@@ -247,6 +247,11 @@ body{
   z-index: 5;
 }
 
+.fa-times-circle:hover,
+.fa-times-circle:active{
+  font-size: 20px;
+}
+
 .new{
   background-color: #ffffff;
   position: fixed;
@@ -259,6 +264,14 @@ body{
   border-image: linear-gradient(150deg, #fd3838 0%, #ffffff 40%, #ffffff 60%, #87ff41 100%);
   border-image-slice: 1;
   padding: 10px;
+}
+
+.new:hover,
+.new:active{
+  font-weight: bold;
+  background: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .new .link{

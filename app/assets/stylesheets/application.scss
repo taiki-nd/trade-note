@@ -238,6 +238,15 @@ body{
   border: 1px solid #000000;
 }
 
+.fa-times-circle{
+  position: fixed;
+  background-color: #ffffff;
+  bottom: 60px;
+  right: 170px;
+  margin: 10px;
+  z-index: 10;
+}
+
 .new{
   background-color: #ffffff;
   position: fixed;
@@ -255,7 +264,7 @@ body{
 .fa-file-medical{
   font-size: 25px;
   margin-right: 10px;
-  background: linear-gradient(210deg,  #fd3838 0%,#ffffff 40%, #87ff41 70%, #87ff41 100%);
+  background: linear-gradient(210deg,  #fd3838 0%,#ffffff 40%, #72d639 70%, #87ff41 100%);
   -webkit-background-clip: text;
   color: transparent;
 }

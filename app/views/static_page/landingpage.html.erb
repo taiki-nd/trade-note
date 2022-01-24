@@ -59,6 +59,13 @@
     <%= image_tag "trade-note.png", class: "lp_img fadeleft" %>
     <div class="space"></div>
     <%= image_tag "trade-note2.png", class: "lp_img fadeleft" %>
+
+    <div class="grid grid_for_lp_phone fadeleft">
+      <% @records.each do |record| %>
+        <%= render partial: "shared/index_record", locals: { record: record } %>
+      <% end %>
+    </div>
+    <%= link_to "もっと見る", records_path, class: "link_word" %>
     <div class="space"></div>
     <p class="highlight fadeleft">今後の取引の参考にするためのトレードノートのグラフ化</p>
     <div class="space"></div>

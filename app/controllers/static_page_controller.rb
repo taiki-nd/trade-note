@@ -1,6 +1,8 @@
 class StaticPageController < ApplicationController
+
+  before_action :set_records, only: [:top, :landingpage]
+
   def top
-    @records = Record.includes(:user).order(date: "DESC").order(hour_id: "DESC").order("created_at DESC").limit(4)
     @posts = Post.includes(:user).where(status_id: 2).order("created_at DESC").limit(4)
   end
 
@@ -12,4 +14,11 @@ class StaticPageController < ApplicationController
 
   def disclaimer
   end
+
+  private
+
+  def set_records
+    @records = Record.includes(:user).order(date: "DESC").order(hour_id: "DESC").order("created_at DESC").limit(4)
+  end
+
 end

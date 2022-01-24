@@ -11,6 +11,7 @@ import "jquery"
 import "packs/menu.js"
 import "packs/change.js"
 import "packs/fadein.js"
+import "packs/none.js"
 import "chartkick/chart.js"
 
 Rails.start()

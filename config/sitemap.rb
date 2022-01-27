@@ -2,10 +2,6 @@
 SitemapGenerator::Sitemap.default_host = "https://trade-note.jp"
 
 SitemapGenerator::Sitemap.create do
-  add records_path, changefreq: 'always'
-  Record.find_each do |record|
-    add record_path(record), changefreq: 'daily', lastmod: record.updated_at
-  end
 
   add posts_path, changefreq: 'always'
   Post.find_each do |post|

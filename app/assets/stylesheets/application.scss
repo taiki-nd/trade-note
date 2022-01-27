@@ -240,7 +240,6 @@ body{
 
 .fa-times-circle{
   position: fixed;
-  background-color: #ffffff;
   bottom: 40px;
   right: 0px;
   margin: 10px;
@@ -268,10 +267,8 @@ body{
 
 .new:hover,
 .new:active{
+  background-color: #ffffff;
   font-weight: bold;
-  background: linear-gradient(70deg, #fd3838, #dbdbdb, #87ff41);
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 .new .link{

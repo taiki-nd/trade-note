@@ -7,10 +7,16 @@
     <% end %>
     <p class="info">
       <%= record.pair.name %> →
-      <% if record.price_renge > 0 %>
-        <b>利益獲得！</b>
+      <% if record.price_renge > 0 && record.indi_main.name != "--" && record.line_main.name != "--" %>
+        <b class="b_win">【利】</b><%= record.indi_main.name %>/<%= record.line_main.name %>
+      <% elsif record.price_renge > 0 && record.indi_main.name != "--" && record.line_main.name == "--" %>
+        <b class="b_win">【利】</b><%= record.indi_main.name %>
+      <% elsif record.price_renge > 0 && record.indi_main.name == "--" && record.line_main.name != "--" %>
+        <b class="b_win">【利】</b><%= record.line_main.name %>
+      <% elsif record.price_renge > 0 && record.indi_main.name == "--" && record.line_main.name == "--" %>
+        <b class="b_win">【利】</b><%= record.result_section.name %>
       <% elsif record.price_renge < 0 %>
-        損失
+        <b>【損】</b><%= record.result_section.name %>
       <% else %>
         損益判定なし
       <% end %>

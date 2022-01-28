@@ -22,8 +22,15 @@
 }
 
 .info{
+  font-size: 0.8rem;
   margin: 5px 10px 0;
   padding: 0;
+}
+
+.b_win{
+  background: -webkit-linear-gradient(0deg, #ff0000, #777777, #5eff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .record_small_info{
@@ -37,7 +44,7 @@
   text-align: right;
   margin-right: 10px;
   color: #777777;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .link_to_user{

@@ -198,6 +198,7 @@
 <%#
   <i class="far fa-times-circle" id="none"></i>
 %>
+<% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
   <div class="new">
     <div class="new_icon">
       <i class="fas fa-file-medical"></i>
@@ -207,6 +208,7 @@
     </div>
     <a class="link" href="/records/new"></a>
   </div>
+<% end %>
 
   <div class="space"></div>
   <div class="space"></div>

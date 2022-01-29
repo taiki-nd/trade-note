@@ -14,13 +14,10 @@
  *= require_self
  */
 
- @import 'simplemde/dist/simplemde.min'; 
- @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@100&family=Open+Sans:wght@300&display=swap');
+ @import 'simplemde/dist/simplemde.min';
 
  html{
   overflow: auto;
-  font-family: 'Murecho', sans-serif;
-  font-family: 'Open Sans', sans-serif;
 }
 
 body{

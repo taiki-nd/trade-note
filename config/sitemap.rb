@@ -5,7 +5,7 @@ SitemapGenerator::Sitemap.create do
 
   add records_path, changefreq: 'always'
   Record.find_each do |record|
-    add record_path(record), changefreq: 'daily', lastmod: post.updated_at
+    add record_path(record), changefreq: 'daily', lastmod: record.updated_at
   end
 
   add posts_path, changefreq: 'always'

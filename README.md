@@ -4,7 +4,7 @@ Trade-Note
 
 # URL
 
-https://trade-note.jp
+https://trade-note.jp (現在閉鎖中)
 
 # アプリケーション概要
 
